@@ -18,6 +18,8 @@ gem 'font-awesome-sass'
 gem 'devise'
 gem 'simple_form'
 
+gem "figaro"
+
 group :development, :test do
   gem 'byebug'
   gem 'letter_opener'

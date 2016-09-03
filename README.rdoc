@@ -1,5 +1,8 @@
-ApplyWithin is a free network for the high-street recruitment market.
+BigYin is a video sharing application.
 
-It has two sets of users, employers and candidates.
+People all over the world want to share their opinions on elections and referendums because they matter.  But the nature of social media means we rarely hear the voices of those that disagree.
 
-Both sets of users have a profile page which they can use to interact with others on the network.
+So that's why we're different.  You don't decide who's voice you hear but you can decide whether you agree or not.
+
+Users can watch and upload one minute videos.
+
