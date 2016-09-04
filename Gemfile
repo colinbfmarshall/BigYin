@@ -11,6 +11,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'rails_12factor', group: :production
 
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'font-awesome-sass'
@@ -18,7 +19,17 @@ gem 'font-awesome-sass'
 gem 'devise'
 gem 'simple_form'
 
-gem "figaro"
+gem 'shrine'
+gem 'aws-sdk', '~> 2.1'
+gem 'roda'
+gem 'sucker_punch', '~> 2.0'
+gem 'streamio-ffmpeg', '2.0'
+gem 'image_processing'
+gem 'mini_magick'
+gem 'fastimage'
+
+gem 'figaro'
+gem 'pry'
 
 group :development, :test do
   gem 'byebug'
