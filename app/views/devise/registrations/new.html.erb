@@ -1,7 +1,7 @@
-<div class="col-lg-4 col-lg-offset-4 centered">
-  <div class="panel panel-default devise_panel">
+<div class="col-lg-4 col-lg-offset-4">
+  <div class="panel panel-default">
     <div class="panel-heading">
-      <h2>Sign up</h2>
+      <h3>Sign up</h3>
     </div>
     <div class="panel-body">
 
@@ -9,30 +9,28 @@
 
           <%= devise_error_messages! %>
 
-          <div class="field">
-            <%= f.input :email, autofocus: true %>
+          <div class="form-group">
+            <%= f.input :email, autocomplete: "off", input_html: { class: 'form-control' } %>
           </div>
 
-          <div class="field">
-            <%= f.input :password, autocomplete: "off" %>
+          <div class="form-group">
+            <%= f.input :password, autocomplete: "off", input_html: { class: 'form-control' } %>
             <% if @minimum_password_length %>
               <em style="color:grey">(<%= @minimum_password_length %> characters minimum)</em>
             <% end %>
             <br />
           </div>
 
-          <div class="field">
-            <%= f.input :password_confirmation, autocomplete: "off" %>
+          <div class="form-group">
+            <%= f.input :password_confirmation, autocomplete: "off", input_html: { class: 'form-control' } %>
           </div>
 
           <div class="actions">
-            <%= f.submit "Sign up", class:"btn btn-default" %>
+            <%= f.submit "Sign up", class:"btn btn-default btn-block" %>
           </div>
-
+          <hr>
+          <%= render "devise/shared/log_in" %>
         <% end %>
-        <hr>
-        <%= render "devise/shared/links" %>
-
     </div>
   </div>
 </div>
