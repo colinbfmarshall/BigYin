@@ -18,6 +18,7 @@ gem 'font-awesome-sass'
 
 gem 'devise'
 gem 'simple_form'
+gem 'jquery-fileupload-rails'
 
 gem 'shrine'
 gem 'aws-sdk', '~> 2.1'
@@ -34,6 +35,7 @@ gem 'pry'
 group :development, :test do
   gem 'byebug'
   gem 'letter_opener'
+  gem 'dotenv-rails'
 end
 
 group :development do

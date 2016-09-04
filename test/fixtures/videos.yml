@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  video_data: MyText
+  processed: false
+  user_id: 
+
+two:
+  video_data: MyText
+  processed: false
+  user_id: 
