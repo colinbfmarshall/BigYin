@@ -1,6 +1,7 @@
 <div class="container">
 
   <div class="row">
+
     <% @videos.each_with_index do |video, idx| %>
       <div class="col-md-4">            
         <%= render "video", video: video, idx: idx %>
@@ -13,18 +14,8 @@
 
     <div class="col-md-6 col-md-offset-3">
       <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3>Upload Video</h3>
-        </div>
         <div class="panel-body">
-          
-          <div class="form-group">
-
-            <label>Select Video</label>
-            <%= file_field_tag :file, multiple: true %>
-          
-          </div>
-
+          <%= link_to 'ADD VIDEO', new_video_path, class:'btn btn-flat flat-inverse btn-rounded btn-block' %>
         </div>
       </div>
     </div>

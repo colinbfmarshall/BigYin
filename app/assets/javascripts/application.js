@@ -15,10 +15,8 @@
 //= require jquery-fileupload/vendor/jquery.ui.widget
 //= require jquery-fileupload/jquery.iframe-transport
 //= require jquery-fileupload/jquery.fileupload
-//= require turbolinks
-//= require bootstrap
 //= require bootstrap-sprockets
-//= require_self
+//= require turbolinks
 //= require_tree .
 
 $(function() {

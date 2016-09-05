@@ -1,13 +1,16 @@
 class VideosController < ApplicationController
   before_action :set_topic
+  before_action :authenticate_user!, only: %i[new create]
 
   def index
-    @videos = @topic.videos
+    @videos = Video.all
+  end
+
+  def new
   end
 
   def create
     video = @topic.videos.create(video_params)
-    raise video.inspect
     render partial: "video", locals: {video: video, idx: @topic.videos.count}
   end
 
