@@ -16,7 +16,6 @@
 //= require jquery-fileupload/jquery.iframe-transport
 //= require jquery-fileupload/jquery.fileupload
 //= require bootstrap-sprockets
-//= require turbolinks
 //= require_tree .
 
 $(function() {
@@ -38,9 +37,9 @@ $(function() {
       var percentage = progress.toString() + '%'
       data.progressBar.find(".progress-bar").css("width", percentage).html(percentage);
     },
+
     done: function(e, data) {
       data.progressBar.remove();
-
       var video = {
         id: data.formData.key.match(/cache\/(.+)/)[1], // we have to remove the prefix part
         storage: 'cache',
@@ -51,8 +50,18 @@ $(function() {
         }
       }
 
-      $.ajax("/topic/videos", {method: 'POST', data: {video: {video: JSON.stringify(video)}}})
+      $.ajax("/videos", {method: 'POST', data: {video: {video: JSON.stringify(video)}}})
         .done(function(data) { $("ul").append(data) })
     }
   });
 });
+
+
+// $('[type=file]').fileupload({
+//     dataType: 'json',
+//     add: function (e, data) {            
+//         $("#upload_btn").off('click').on('click', function () {
+//             data.submit();
+//         });
+//     },
+// });

@@ -8,18 +8,19 @@
         </div>
         <div class="panel-body">
           
-          <div class="form-group">
-            <label>Select Video</label>
+          <%= simple_form_for @video, remote: true, :html => {:multipart => true} do |f| %>
+            <%= f.input :topic_id, collection: 1..5, :include_blank => false %>
             <%= file_field_tag :file, multiple: true %>
-          </div>
-          
+            <br>
+            <%= f.submit "ADD VIDEO", class: "btn btn-flat flat-success btn-rounded btn-block" %>
+          <% end %>
           <hr>
           
-          <button type="button" class="btn btn-flat flat-success btn-rounded btn-block">ADD VIDEO</button>
         </div>
       </div>
     </div>
 
   </div>
 </div>
+
 

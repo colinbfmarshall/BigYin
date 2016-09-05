@@ -11,11 +11,12 @@ class VideoUploader < Shrine
     screenshot = Tempfile.new(["screenshot", ".jpg"], binmode: true)
 
     movie = FFMPEG::Movie.new(mov.path)
-    options = { custom: %w(-ss 00:00:03 -t 00:00:10) } 
+    options = { custom: %w(-ss 00:00:03 -t 00:00:20) } 
     movie.transcode(video.path, options)
     movie.screenshot(screenshot.path)
     mov.delete
 
     {video: video, screenshot: screenshot}
   end
+
 end

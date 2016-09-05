@@ -5,9 +5,5 @@ Rails.application.routes.draw do
   devise_for :users
   resources :videos
 
-  patch "/topic" => "videos#update"
-  post "/topic/videos" => "videos#create"
-
-
   mount VideoUploader::UploadEndpoint, at: "/attachments/videos"
 end
