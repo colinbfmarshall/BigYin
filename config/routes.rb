@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
-  # root 'welcome#index'
-  root 'videos#index'
+  root 'welcome#index'
 
   devise_for :users
-  resources :videos
+
+  resources :topics do
+    resources :posts
+  end
+  
+  # resources :videos
 
   mount VideoUploader::UploadEndpoint, at: "/attachments/videos"
 end

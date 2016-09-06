@@ -1,5 +1,4 @@
 class VideosController < ApplicationController
-  before_action :set_topic
   before_action :authenticate_user!, only: %i[new create]
 
   def index
@@ -14,6 +13,7 @@ class VideosController < ApplicationController
   def create
     @video = Video.new(video_params)
     @video.user = current_user
+    
     respond_to do |format|
       if @video.save
         format.html { redirect_to(@video, :notice => 'Video was successfully created, it make take a few minutes to process it before it goes live.') }
@@ -34,14 +34,6 @@ class VideosController < ApplicationController
   end
 
   private
-
-  def set_topic
-    @topic = Topic.first_or_create!
-  end
-
-  def topic_params
-    params.require(:topic).permit!
-  end
 
   def video_params
     params.require(:video).permit(:video, :video_data, :topic_id, :processed, :user_id)

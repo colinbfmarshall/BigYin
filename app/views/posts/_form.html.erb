@@ -1,0 +1,14 @@
+<%= simple_form_for([@topic, @post]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :user, as: :hidden %>
+    <%= f.association :topic, as: :hidden  %>
+    <%= f.input :live %>
+    <%= f.input :share %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

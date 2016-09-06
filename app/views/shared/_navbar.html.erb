@@ -25,10 +25,10 @@
               <li><%= link_to destroy_user_session_path, method: :delete do %>Sign Out<% end %></li>
             </ul>
           </li>
-          <li><%= link_to 'Search', root_path %></li>
+          <li><%= link_to 'Search', topics_path %></li>
         <% else %>
           <li><%= link_to 'Sign In', new_user_session_path %></li>
-          <li><%= link_to 'Search', root_path %></li>
+          <li><%= link_to 'Search', topics_path %></li>
         <% end %>
         </ul>
       </div>

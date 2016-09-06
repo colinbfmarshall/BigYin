@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 col-lg-offset-4">
+      <%= render partial: "topic", object: @topic, as: 'topic' %>
+    </div>    
+  </div>
+  <div class="row">
+  
+  <% @topic.posts.each do |post| %>
+    <div class="col-md-4">
+      <%= render partial: '/posts/post', object: post %>
+    </div>
+  <% end %>
+
+  </div>
+</div>

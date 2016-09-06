@@ -1,31 +1,23 @@
 <div class="container">
   <div class="row"> 
-
-
-
-    <div class="col-md-4">
-      <div class="panel">
-        <div class="panel-body">
-          
+    <h5>Top Topics</h5>
+    <% Topic.all.each do |topic| %>
+      <div class="col-md-4">
+        <div class="panel">
+          <div class="panel-body" style="text-align:center">
+            <strong><%= link_to "#{topic.title}", topic %></strong>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="panel">
-        <div class="panel-body">
-          
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="panel">
-        <div class="panel-body">
-          
-        </div>
-      </div>
-    </div>
-
+    <% end %>
   </div>
+  <div class="row">
+    <h5>Top Posts</h5>
+    <% Post.all.each do |post| %>
+      <div class="col-md-4">
+      <%= render partial: "/posts/post", object: post, as: 'post' %>
+      </div>
+    <% end %>
+  </div>
+
 </div>

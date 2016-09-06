@@ -1,6 +1,8 @@
 class Video < ActiveRecord::Base
   belongs_to :user
 
+  
+
   include VideoUploader[:video]
   # validates_presence_of :topic_id
 

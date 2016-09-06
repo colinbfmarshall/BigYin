@@ -1,4 +1,4 @@
 class Topic < ActiveRecord::Base
-  has_many :videos
-  accepts_nested_attributes_for :videos
+  has_many :posts
+  accepts_nested_attributes_for :posts
 end

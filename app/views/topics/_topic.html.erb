@@ -1,0 +1,20 @@
+  <div class="panel">
+    <div class="panel-heading">
+      <h3><%= topic.title %></h3>
+    </div>
+    <div class="panel-body">
+
+      <h6>Description:</h6>
+      <p><%= topic.description %></p>
+
+      <h6>Deadline:</h6>
+      <p><%= topic.deadline %></p>
+
+      <h6>Active:</h6>
+      <p><%= topic.active %></p>
+      <hr>
+      <%= link_to 'ADD VIDEO', new_topic_post_path(topic), class:'btn btn-flat flat-success btn-rounded pull-right' %>
+      <%= link_to 'Edit', edit_topic_path(topic) %> | <%= link_to 'Back', topics_path %>
+    
+    </div>
+  </div>

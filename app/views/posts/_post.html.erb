@@ -1,0 +1,18 @@
+<div class="panel">
+  <div class="panel-body">
+    <h4><%= post.topic.title %></h4>
+    <h6>Description:</h6>
+    <p><%= post.user.email %></p>
+
+    <h6>Live:</h6>
+    <p><%= post.live %></p>
+
+    <h6>Share:</h6>
+    <p><%= post.share %></p>
+
+    <% if owner(post) %>
+    	<%= link_to 'Edit', edit_topic_post_path(post.topic, post) %> | <%= link_to 'Back', topic_path(post.topic) %>
+    <% end %>
+
+  </div>
+</div>
