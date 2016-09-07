@@ -1,3 +1,5 @@
-<%= link_to video do %>
-  <%= image_tag video.video_url(:screenshot), class: "img-rounded", style: 'height:250px;width:100%;margin-bottom:20px' %>
-<% end %>
+  <% if video.processed %>
+    <%= image_tag video.video_url(:screenshot), class: "img-rounded", style: 'height:250px;width:100%;margin-bottom:20px' %>
+  <% else %>
+    Video <%= video.id %> still being processed
+  <% end %>

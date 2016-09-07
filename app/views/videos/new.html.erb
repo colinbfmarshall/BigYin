@@ -7,20 +7,13 @@
           <h3>Upload Video</h3>
         </div>
         <div class="panel-body">
-          
-          <%= simple_form_for @video, remote: true, :html => {:multipart => true} do |f| %>
-            <%= f.input :topic_id, collection: 1..5, :include_blank => false %>
+          <div class="form-group">
+            <label>Select photos</label>
             <%= file_field_tag :file, multiple: true %>
-            <br>
-            <%= f.submit "ADD VIDEO", class: "btn btn-flat flat-success btn-rounded btn-block" %>
-          <% end %>
-          <hr>
-          
+          </div>          
         </div>
       </div>
     </div>
 
   </div>
 </div>
-
-

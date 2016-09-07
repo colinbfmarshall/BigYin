@@ -1,15 +1,17 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-4 col-lg-offset-4">
+    <div class="col-md-10 col-md-offset-1">
       <%= render partial: "topic", object: @topic, as: 'topic' %>
     </div>    
   </div>
   <div class="row">
   
   <% @topic.posts.each do |post| %>
+    <%= link_to post do %>
     <div class="col-md-4">
       <%= render partial: '/posts/post', object: post %>
     </div>
+    <% end %>
   <% end %>
 
   </div>

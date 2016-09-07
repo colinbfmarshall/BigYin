@@ -8,13 +8,19 @@
       <p><%= topic.description %></p>
 
       <h6>Deadline:</h6>
-      <p><%= topic.deadline %></p>
+      <p><%= topic.deadline.strftime("%d %B %Y") %></p>
+
+      <h6>Location:</h6>
+      <p><%= topic.location %></p>
+
+      <h6>Links:</h6>
+      <p><%= link_to 'Wikipedia', "#{topic.wikipedia}", target: "blank" %></p>
+
 
       <h6>Active:</h6>
       <p><%= topic.active %></p>
       <hr>
       <%= link_to 'ADD VIDEO', new_topic_post_path(topic), class:'btn btn-flat flat-success btn-rounded pull-right' %>
       <%= link_to 'Edit', edit_topic_path(topic) %> | <%= link_to 'Back', topics_path %>
-    
     </div>
   </div>

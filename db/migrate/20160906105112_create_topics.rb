@@ -3,6 +3,8 @@ class CreateTopics < ActiveRecord::Migration
     create_table :topics do |t|
       t.string :title
       t.text :description
+      t.string :location
+      t.string :wikipedia
       t.date :deadline
       t.boolean :active, default: false
 

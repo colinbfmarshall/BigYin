@@ -2,10 +2,12 @@
 
 one:
   video_data: MyText
-  processed: false
   user_id: 
+  post_id: 
+  processed: false
 
 two:
   video_data: MyText
-  processed: false
   user_id: 
+  post_id: 
+  processed: false

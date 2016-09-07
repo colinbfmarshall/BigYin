@@ -1,8 +1,8 @@
 class VideosController < ApplicationController
-  before_action :authenticate_user!, only: %i[new create]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+  before_action :set_post, only: [:new, :create, :edit, :update]
 
   def index
-    # @videos = Video.where(processed: true)
     @videos = Video.all
   end
 
@@ -12,11 +12,14 @@ class VideosController < ApplicationController
 
   def create
     @video = Video.new(video_params)
+    @video.post = @post
     @video.user = current_user
-    
+
+
     respond_to do |format|
       if @video.save
-        format.html { redirect_to(@video, :notice => 'Video was successfully created, it make take a few minutes to process it before it goes live.') }
+        format.html { redirect_to post_video_path(@post, @video), :notice => 'Video was successfully created, it make take a few minutes to process it before it goes live.' }
+        format.js { redirect_to post_video_path(@post, @video), :notice => 'Video was successfully created, it make take a few minutes to process it before it goes live.' }
       else
         format.html { render :action => "new" }
       end
@@ -29,13 +32,17 @@ class VideosController < ApplicationController
   end
 
   def update
-    @topic.update(topic_params)
+    @video.update(video_params)
     redirect_to root_path
   end
 
   private
 
+  def set_post
+    @post = Post.find(params[:post_id])
+  end
+
   def video_params
-    params.require(:video).permit(:video, :video_data, :topic_id, :processed, :user_id)
+    params.require(:video).permit!
   end
 end

@@ -50,18 +50,8 @@ $(function() {
         }
       }
 
-      $.ajax("/videos", {method: 'POST', data: {video: {video: JSON.stringify(video)}}})
+      $.ajax("/posts/1/videos", {method: 'POST', data: {video: {video: JSON.stringify(video)}}})
         .done(function(data) { $("ul").append(data) })
     }
   });
 });
-
-
-// $('[type=file]').fileupload({
-//     dataType: 'json',
-//     add: function (e, data) {            
-//         $("#upload_btn").off('click').on('click', function () {
-//             data.submit();
-//         });
-//     },
-// });
