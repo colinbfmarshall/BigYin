@@ -1,5 +1,29 @@
-  <% if video.processed %>
-    <%= image_tag video.video_url(:screenshot), class: "img-rounded", style: 'height:250px;width:100%;margin-bottom:20px' %>
-  <% else %>
-    Video <%= video.id %> still being processed
-  <% end %>
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel">
+        <div class="panel-body" style="text-align:center">
+          <% if video.processed %>
+
+            <%= video_tag(video.video_url(:video), controls: true, autobuffer: true, style:"width:100%;height:100%;max-height:350px") %>
+
+          <% else %>
+            Video <%= video.id %> still being processed
+          <% end %>
+          
+          <hr>
+            
+          <div class="btn-group" role="group">
+            <%= link_to root_path, class:'btn btn-flat flat-info btn-rounded btn-md' do %><i class="fa fa-thumbs-down fa-2x" aria-hidden="true"></i><% end %>
+            <%= link_to root_path, class:'btn btn-flat flat-danger btn-rounded btn-md' do %><i class="fa fa-heart fa-2x" aria-hidden="true"></i><% end %>
+            <%= link_to root_path, class:'btn btn-flat flat-warning btn-rounded btn-md' do %><i class="fa fa-bell fa-2x" aria-hidden="true"></i><% end %>
+            <%= link_to root_path, class:'btn btn-flat flat-success btn-rounded btn-md' do %><i class="fa fa-thumbs-up fa-2x" aria-hidden="true"></i><% end %>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

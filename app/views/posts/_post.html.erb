@@ -1,12 +1,27 @@
-  <%= render partial: '/videos/video', locals: {video: post.video} %>
+
+<% if post.video.present? %>
+  <%= link_to post do %>
+    <% if post.processed %>
+
+      <%= image_tag(post.video_url(:screenshot), style:"width:100%;height:300px;max-height:350px;border-radius:2px") %>
+
+    <% else %>
+      Video <%= post.video %> still being processed
+    <% end %>
+
+  <% end %>
+<% else %>
 
   <h4><% post.topic.title %></h4>
+  <p><%= post.id %></p>
 
   <h6>Live:</h6>
-  <p><% post.live %></p>
+  <p><%= post.live %></p>
 
   <h6>Share:</h6>
-  <p><% post.share %></p>
+  <p><%= post.share %></p>
+
+<% end %>
 
   <% if owner(post) %>
       <%= link_to 'Edit', edit_topic_post_path(post.topic, post) %> | <%= link_to 'Back', topic_path(post.topic) %>

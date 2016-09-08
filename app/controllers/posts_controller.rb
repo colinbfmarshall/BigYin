@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :set_topic, only: [:new, :create, :index, :edit, :update]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: %i[new create]
+  respond_to :html, :json
 
   # GET /posts
   # GET /posts.json
@@ -28,15 +29,14 @@ class PostsController < ApplicationController
   def create
     @post = @topic.posts.create(post_params)
     @post.user = current_user
-
     respond_to do |format|
+
       if @post.save
-        format.html {redirect_to new_post_video_path(@post), notice: 'Now upload your video!' }
-        # format.html { redirect_to , notice: 'Post was successfully created.' }
-        # format.json { render :show, status: :created, location: @post }
+        format.html { redirect_to root_path, notice: 'Post created but we need to process it.' }
+        format.json { render json: { :new_path => "#topic_posts_path" } }
       else
         format.html { render :new }
-        # format.json { render json: @post.errors, status: :unprocessable_entity }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -46,9 +46,8 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
-
-        format.html { redirect_to new_post_video_path(@post), notice: 'Post was successfully updated.' }
-        format.json { render :show, status: :ok, location: @post }
+        format.html { redirect_to root_path, notice: 'Post updated but we need to process it.' }
+        format.json { render json: { :new_path => "#topic_posts_path" } }
       else
         format.html { render :edit }
         format.json { render json: @post.errors, status: :unprocessable_entity }
@@ -79,6 +78,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:user_id, :topic_id, :live, :share)
+      params.require(:post).permit!
     end
 end

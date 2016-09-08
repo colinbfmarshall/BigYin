@@ -1,14 +1,9 @@
-<%= simple_form_for([@topic, @post]) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.association :user, as: :hidden %>
-    <%= f.association :topic, as: :hidden  %>
-    <%= f.input :live %>
-    <%= f.input :share %>
+<div id="url" data-posturl="<%= topic_posts_path(@topic, @post) %>">
+  <div class="form-group-uploader">
+    <label>Select Video</label>
+    <%= file_field_tag :file, multiple: true %>
+    <br>
+    <label>Share Video</label>
+    <%= check_box_tag 'share', true %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+</div>

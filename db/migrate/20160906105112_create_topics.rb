@@ -6,7 +6,7 @@ class CreateTopics < ActiveRecord::Migration
       t.string :location
       t.string :wikipedia
       t.date :deadline
-      t.boolean :active, default: false
+      t.boolean :active, default: true
 
       t.timestamps null: false
     end

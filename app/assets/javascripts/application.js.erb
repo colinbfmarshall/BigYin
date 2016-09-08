@@ -21,7 +21,7 @@
 $(function() {
   $('[type=file]').fileupload({
     add: function(e, data) {
-      data.progressBar = $('<div class="progress" style="width: 300px"><div class="progress-bar"></div></div>').insertAfter(".form-group");
+      data.progressBar = $('<div class="progress" style="width: 300px"><div class="progress-bar"></div></div>').insertAfter(".form-group-uploader");
       var options = {
         extension: data.files[0].name.match(/(\.\w+)?$/)[0], // set extension
         _: Date.now(),                                       // prevent caching
@@ -37,9 +37,9 @@ $(function() {
       var percentage = progress.toString() + '%'
       data.progressBar.find(".progress-bar").css("width", percentage).html(percentage);
     },
-
     done: function(e, data) {
       data.progressBar.remove();
+
       var video = {
         id: data.formData.key.match(/cache\/(.+)/)[1], // we have to remove the prefix part
         storage: 'cache',
@@ -50,8 +50,16 @@ $(function() {
         }
       }
 
-      $.ajax("/posts/1/videos", {method: 'POST', data: {video: {video: JSON.stringify(video)}}})
-        .done(function(data) { $("ul").append(data) })
+      var post = $('#url').data('posturl');
+      $.ajax({
+          url: post,
+          type: "POST",
+          dataType: "JSON",
+          data: { post: {video: JSON.stringify(video)}}
+      }).success(function(d){
+          // update location on success
+          location.replace(d.new_path);
+      });
     }
   });
 });

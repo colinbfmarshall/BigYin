@@ -5,6 +5,8 @@ class CreatePosts < ActiveRecord::Migration
       t.references :topic, index: true, foreign_key: true
       t.boolean :live, default: false
       t.boolean :share, default: false
+      t.text :video_data
+      t.boolean :processed, default: false
 
       t.timestamps null: false
     end

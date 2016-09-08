@@ -14,7 +14,7 @@
   <div class="row">
     <h5>Top Posts</h5>
     <% Post.all.each do |post| %>
-      <div class="col-md-4">
+      <div class="col-md-4" style="margin-bottom:40px">
       <%= render partial: "/posts/post", object: post, as: 'post' %>
       </div>
     <% end %>

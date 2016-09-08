@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20160906135613) do
     t.integer  "topic_id"
     t.boolean  "live",       default: false
     t.boolean  "share",      default: false
+    t.text     "video_data"
+    t.boolean  "processed",  default: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end

@@ -7,9 +7,7 @@ Rails.application.routes.draw do
     resources :posts
   end
 
-  resources :posts, only: [:show] do
-    resources :videos
-  end
+  resources :posts, only: [:show]
 
   mount VideoUploader::UploadEndpoint, at: "/attachments/videos"
 end

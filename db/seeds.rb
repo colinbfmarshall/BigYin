@@ -5,3 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+user = User.new(
+  email: 'user1@email.com', 
+  password: 'password', 
+  password_confirmation: 'password'
+)
+user.skip_confirmation!
+user.save!
+
+
+topic = Topic.create(title: 'Emanuel', description: 'Emanuel has a description', location: 'London', wikipedia: 'http://www.bbc.co.uk/sport', deadline: DateTime.now + (2*7*24*60*60))
+topic.save!
