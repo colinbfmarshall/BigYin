@@ -8,9 +8,7 @@
   
   <% @topic.posts.each do |post| %>
     <%= link_to post do %>
-    <div class="col-md-4">
       <%= render partial: '/posts/post', object: post %>
-    </div>
     <% end %>
   <% end %>
 

@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.where(live: true)
   end
 
   # GET /posts/1
@@ -27,10 +27,10 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = @topic.posts.create(post_params)
+    @post = Post.new(post_params)
+    @post.topic = @topic
     @post.user = current_user
     respond_to do |format|
-
       if @post.save
         format.html { redirect_to root_path, notice: 'Post created but we need to process it.' }
         format.json { render json: { :new_path => "#topic_posts_path" } }
