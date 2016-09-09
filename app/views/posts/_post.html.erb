@@ -1,40 +1,44 @@
 
-<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-<%= link_to post do %>
-  <% if post.video.present? %>
-      <% if post.processed %>
+<div class="post_partial">
+  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" >
+  <%= link_to post do %>
+    <% if post.video.present? %>
+        <% if post.processed %>
 
-        <div class="hovereffect">
-          <%= image_tag(post.video_url(:screenshot), style:"width:100%;height:300px;max-height:350px;border-radius:2px") %>
+          <div class="hovereffect">
+            <%= image_tag(post.video_url(:screenshot), style:"width:100%;height:300px;max-height:350px;border-radius:2px") %>
 
-        <div class="overlay">
-          <h6><%= post.topic.title %></h6>
+          <div class="overlay">
+            <h6><%= post.topic.title %></h6>
+            <h6>ID: <%= post.id %></h6>
+            <h6>Live: <%= post.live %></h6>
+            <h6>Processed: <%= post.processed %></h6>
+          </div>
+
         </div>
-
-      </div>
-      
-      <% else %>
         
-        <div class="spinner"></div>
+        <% else %>
+          
+          <div class="spinner"></div>
 
+        <% end %>
+
+    <% else %>
+
+      <h4><%= post.topic.title %></h4>
+      <p><%= post.id %></p>
+
+      <h6>Live:</h6>
+      <p><%= post.live %></p>
+
+      <h6>Share:</h6>
+      <p><%= post.share %></p>
+
+    <% end %>
+  <% end %>
+      <% if owner(post) %>
+          <%= link_to 'Edit', edit_topic_post_path(post.topic, post) %> | <%= link_to 'Back', topic_path(post.topic) %>
       <% end %>
 
-  <% else %>
-
-    <h4><%= post.topic.title %></h4>
-    <p><%= post.id %></p>
-
-    <h6>Live:</h6>
-    <p><%= post.live %></p>
-
-    <h6>Share:</h6>
-    <p><%= post.share %></p>
-
-  <% end %>
-<% end %>
-    <% if owner(post) %>
-        <%= link_to 'Edit', edit_topic_post_path(post.topic, post) %> | <%= link_to 'Back', topic_path(post.topic) %>
-    <% end %>
-
+  </div>
 </div>
-

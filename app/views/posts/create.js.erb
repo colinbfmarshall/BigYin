@@ -1,5 +1,0 @@
-<% if @post.new_record? %>
-  alert("Failed to upload painting: <%= j @post.errors.full_messages.join(', ').html_safe %>");
-<% else %>
-  $("#post").append("<%= j render(@post) %>");
-<% end %>

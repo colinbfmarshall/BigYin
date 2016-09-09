@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
 
   include VideoUploader[:video]
 
-  validate :one_live_video, on: :create
+  after_save :one_live_video, on: :create
   after_update :processing_completed
 
   # Need to create method that checks whether the processing has been completed on video.  

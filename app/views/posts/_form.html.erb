@@ -1,18 +1,9 @@
-
-
 <div id="url" data-posturl="<%= topic_posts_path(@topic, @post) %>">
+
   <div class="form-group-uploader">
     <label>Select Video</label>
     <%= file_field_tag :file, multiple: true %>
     <br>
-    <label>Share Video</label>
-    <%= check_box_tag 'share', true %>
   </div>
+
 </div>
-
-
-<%= simple_form_for([@topic, @post]) do |f| %>
-  <%= f.input :share %>
-  <%= f.input :live %>
-  <%= f.button :submit %>
-<% end %>

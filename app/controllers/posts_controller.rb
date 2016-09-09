@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :set_topic, only: [:new, :create, :index, :edit, :update]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: %i[new create]
-  respond_to :html, :json
+  respond_to :html, :xml, :json
 
   # GET /posts
   # GET /posts.json
@@ -33,7 +33,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.save
         format.html { redirect_to root_path, notice: 'Post created but we need to process it.' }
-        format.json { render json: { :new_path => "#topic_posts_path" } }
+        format.json {render action: 'show', :id => @post.id}
       else
         format.html { render :new }
         format.json { render json: @post.errors, status: :unprocessable_entity }
@@ -47,7 +47,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to root_path, notice: 'Post updated but we need to process it.' }
-        format.json { render json: { :new_path => "#topic_posts_path" } }
+        format.json {render action: 'show', :id => @post.id}
       else
         format.html { render :edit }
         format.json { render json: @post.errors, status: :unprocessable_entity }

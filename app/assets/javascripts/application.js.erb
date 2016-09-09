@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-fileupload/vendor/jquery.ui.widget
-//= require jquery-fileupload/jquery.iframe-transport
 //= require jquery-fileupload/jquery.fileupload
 //= require bootstrap-sprockets
 //= require_tree .
@@ -55,11 +54,11 @@ $(function() {
           url: post,
           type: "POST",
           dataType: "JSON",
-          data: { post: {video: JSON.stringify(video)}}
-      }).success(function(d){
-          // update location on success
-          location.replace(d.new_path);
-      });
+          data: { post: {video: JSON.stringify(video)} }, 
+          success: function(response) {
+            window.location.href = post;
+          }
+      })
     }
   });
 });
