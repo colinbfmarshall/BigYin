@@ -1,9 +1,38 @@
+<% content_for :head do %>
+  <!-- Schema.org markup for Google+ -->
+  <meta itemprop="name" content="The Name or Title Here">
+  <meta itemprop="description" content="This is the page description">
+  <meta itemprop="image" content="http://www.example.com/image.jpg">
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@publisher_handle">
+  <meta name="twitter:title" content="Page Title">
+  <meta name="twitter:description" content="Page description less than 200 characters">
+  <meta name="twitter:creator" content="@author_handle">
+  <!-- Twitter summary card with large image must be at least 280x150px -->
+  <meta name="twitter:image:src" content="http://www.example.com/image.jpg">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="<%= @post.topic.title %>" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://www.example.com/" />
+  <meta property="og:image" content="http://example.com/image.jpg" />
+  <meta property="og:description" content="Description Here" />
+  <meta property="og:site_name" content="Site Name, i.e. Moz" />
+  <meta property="article:published_time" content="2013-09-17T05:59:00+01:00" />
+  <meta property="article:modified_time" content="2013-09-16T19:08:47+01:00" />
+  <meta property="article:section" content="Article Section" />
+  <meta property="article:tag" content="Article Tag" />
+  <meta property="fb:admins" content="Facebook numberic ID" />
+<% end %>
+
 <div class="container">
   <div class="row">
 
-    <div class="col-md-6 col-md-offset-3">
-      <div class="panel">
-        <div class="panel-body" style="text-align:center">
+    <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+      <div class="panel" style="text-align:center;border-radius:4px;box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;">
+        <div class="panel-body">
           <% if video.processed %>
 
             <%= video_tag(video.video_url(:video), controls: true, autobuffer: true, style:"width:100%;height:100%;max-height:350px") %>
@@ -11,16 +40,15 @@
           <% else %>
             Video <%= video.id %> still being processed
           <% end %>
-          
-          <hr>
-            
-          <div class="btn-group" role="group">
+          <div class="btn-group" role="group" style="margin-top:20px">
             <%= link_to root_path, class:'btn btn-flat flat-info btn-rounded btn-md' do %><i class="fa fa-thumbs-down fa-2x" aria-hidden="true"></i><% end %>
             <%= link_to root_path, class:'btn btn-flat flat-danger btn-rounded btn-md' do %><i class="fa fa-heart fa-2x" aria-hidden="true"></i><% end %>
             <%= link_to root_path, class:'btn btn-flat flat-warning btn-rounded btn-md' do %><i class="fa fa-bell fa-2x" aria-hidden="true"></i><% end %>
             <%= link_to root_path, class:'btn btn-flat flat-success btn-rounded btn-md' do %><i class="fa fa-thumbs-up fa-2x" aria-hidden="true"></i><% end %>
           </div>
 
+          <hr>
+          <div class="addthis_inline_share_toolbox" style="margin:10px"></div>
         </div>
       </div>
     </div>

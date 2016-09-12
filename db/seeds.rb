@@ -15,5 +15,5 @@ user.skip_confirmation!
 user.save!
 
 
-topic = Topic.create(title: 'Emanuel', description: 'Emanuel has a description', location: 'London', wikipedia: 'http://www.bbc.co.uk/sport', deadline: DateTime.now + (2*7*24*60*60))
+topic = Topic.create(title: 'US Presidential Election', description: 'The United States presidential election of 2016, scheduled for Tuesday, November 8, 2016, will be the 58th quadrennial U.S. presidential election.', location: 'United States of America', wikipedia: 'https://en.wikipedia.org/wiki/United_States_presidential_election,_2016', deadline: '08.11.2016')
 topic.save!

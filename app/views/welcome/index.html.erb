@@ -1,21 +1,67 @@
+
+
 <div class="container">
   <div class="row"> 
-    <h5>Top Topics</h5>
+
+<ul id="topicFilterOptions">
+
+  <h4 class="active"><a href="#" class="all">All</a></h4>
+
     <% Topic.all.each do |topic| %>
-      <div class="col-md-4">
-        <div class="panel">
-          <div class="panel-body" style="text-align:center">
-            <strong style="font-size:1.5em"><%= link_to "#{topic.title}", topic %></strong>
-          </div>
-        </div>
-      </div>
+
+      <h4><%= link_to "#{topic.title}", topic, class:"#{topic.id}" %></h4>
+
     <% end %>
+
+</ul>
+
   </div>
+<br>
   <div class="row">
-    <h5>Top Posts</h5>
-    <% Post.all.each do |post| %>
-      <%= render partial: "/posts/post", object: post, as: 'post' %>
-    <% end %>
+
+
+    <div id="postList">
+
+      <% Post.all.each do |post| %>
+
+      <div class="item <%= post.topic.id %>">
+
+        <%= render partial: "/posts/post", object: post, as: 'post' %>    
+      
+      </div>
+
+      <% end %>
+
+    </div>
+
   </div>
 
 </div>
+
+<script type="text/javascript">
+  
+$(document).ready(function() {
+  $('#topicFilterOptions h4 a').hover(function() {
+    // fetch the class of the clicked item
+    var ourClass = $(this).attr('class');
+
+    // reset the active class on all the buttons
+    $('#topicFilterOptions h4').removeClass('active');
+    // update the active state on our clicked button
+    $(this).parent().addClass('active');
+
+    if(ourClass == 'all') {
+      // show all our items
+      $('#postList').children('div.item').show();
+    }
+    else {
+      // hide all elements that don't share ourClass
+      $('#postList').children('div:not(.' + ourClass + ')').hide();
+      // show all elements that do share ourClass
+      $('#postList').children('div.' + ourClass).show();
+    }
+    return false;
+  });
+});
+
+</script>

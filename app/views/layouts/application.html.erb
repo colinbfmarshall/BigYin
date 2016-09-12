@@ -2,21 +2,42 @@
 <html>
   <head>
     <title>BigYin</title>
+    <%= display_meta_tags %>
+    <%= content_for?(:head) ? yield(:head) : '' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+    <% if content_for?(:head) %>
+      <%= yield(:head) %>
+    <% end %>
   </head>
 
   <body>
 
     <%= render partial: 'shared/navbar' %>
 
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+    <div class="container">
+      <% flash.each do |name, msg| %>
+        <% if msg.is_a?(String) %>
+        <div class="col-sm-6 col-sm-offset-3">
+          <div class="alert alert-<%= flash_class_name(name) %>" role="alert">
+            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span>
+              <span class="sr-only">Close</span>
+            </button>
+            <%= content_tag :div, msg, :id => "flash_#{name}" %>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
     
-      <%= yield %>
+    <%= yield %>
 
     <%= render partial: 'shared/footer' %>
+
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-575ea317a308ff8f"></script>
+
   </body>
 
 </html>

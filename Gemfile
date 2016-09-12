@@ -32,6 +32,8 @@ gem 'fastimage'
 gem 'figaro'
 gem 'pry'
 
+gem 'meta-tags'
+
 group :development, :test do
   gem 'byebug'
   gem 'letter_opener'
