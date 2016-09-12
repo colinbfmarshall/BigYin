@@ -84,4 +84,4 @@ production:
   database: BigYin_production
   username: BigYin
   password: <%= ENV['BIGYIN_DATABASE_PASSWORD'] %>
-  pool: 25
+  pool: 27
