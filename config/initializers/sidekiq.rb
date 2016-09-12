@@ -1,11 +1,11 @@
 if Rails.env.production?
 
   Sidekiq.configure_client do |config|
-    config.redis = { size: 3, url: ENV["REDISTOGO_URL"], namespace: "infinite-reaches-64522" }
+    config.redis = { size: 1, url: ENV["REDISTOGO_URL"], namespace: "infinite-reaches-64522" }
   end
 
   Sidekiq.configure_server do |config|
-   config.redis = { size: 20, url: ENV["REDISTOGO_URL"], namespace: "infinite-reaches-64522" }
+   config.redis = { size: 9, url: ENV["REDISTOGO_URL"], namespace: "infinite-reaches-64522" }
 
     Rails.application.config.after_initialize do
       Rails.logger.info("DB Connection Pool size for Sidekiq Server before disconnect is: #{ActiveRecord::Base.connection.pool.instance_variable_get('@size')}")
@@ -23,4 +23,4 @@ if Rails.env.production?
     end
   end
 
-end  
+end
