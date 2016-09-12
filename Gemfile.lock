@@ -40,6 +40,10 @@ GEM
     arel (6.0.3)
     autoprefixer-rails (6.4.1.1)
       execjs
+    autoscaler (0.11.0)
+      heroku-api
+      platform-api
+      sidekiq (~> 4.0)
     aws-sdk (2.5.11)
       aws-sdk-resources (= 2.5.11)
     aws-sdk-core (2.5.11)
@@ -88,6 +92,7 @@ GEM
       railties (>= 4.0, < 5.1)
     down (2.3.6)
     erubis (2.7.0)
+    excon (0.52.0)
     execjs (2.7.0)
     fastimage (2.0.0)
       addressable (~> 2)
@@ -99,6 +104,15 @@ GEM
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     heapy (0.1.2)
+    heroics (0.0.17)
+      erubis (~> 2.0)
+      excon
+      moneta
+      multi_json (>= 1.9.2)
+      netrc
+    heroku-api (0.4.2)
+      excon (~> 0.45)
+      multi_json (~> 1.8)
     i18n (0.7.0)
     image_processing (0.4.1)
     jbuilder (2.6.0)
@@ -132,13 +146,17 @@ GEM
     mini_magick (4.5.1)
     mini_portile2 (2.1.0)
     minitest (5.9.0)
+    moneta (0.8.0)
     multi_json (1.12.1)
+    netrc (0.11.0)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
     orm_adapter (0.5.0)
     pg (0.18.4)
     pkg-config (1.1.7)
+    platform-api (0.8.0)
+      heroics (~> 0.0.17)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -248,6 +266,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoscaler
   aws-sdk (~> 2.1)
   bootstrap-sass (~> 3.3.6)
   byebug
