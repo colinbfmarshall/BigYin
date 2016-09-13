@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
+  mount VideoUploader::UploadEndpoint, at: "/attachments/videos"
+
   root 'welcome#index'
 
   devise_for :users
@@ -9,5 +13,4 @@ Rails.application.routes.draw do
 
   resources :posts, only: [:show]
 
-  mount VideoUploader::UploadEndpoint, at: "/attachments/videos"
 end
