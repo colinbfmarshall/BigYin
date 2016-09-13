@@ -33,7 +33,7 @@ Sidekiq.configure_server do |config|
 end
 
 Sidekiq.configure_client do |config|
-  config.redis = { url: ENV['REDISTOGO_URL'], :size => 1 }
+  config.redis = { url: ENV['REDISTOGO_URL'] }
 
   Rails.application.config.after_initialize do
     ActiveRecord::Base.connection_pool.disconnect!
