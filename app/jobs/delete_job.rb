@@ -1,6 +1,5 @@
 class DeleteJob
-  include SuckerPunch::Job
-
+  include Sidekiq::Worker
   def perform(data)
     Shrine::Attacher.delete(data)
   end
