@@ -162,9 +162,6 @@ GEM
       method_source (~> 0.8.1)
       slop (~> 3.4)
     puma (3.6.0)
-    puma_worker_killer (0.0.6)
-      get_process_mem (~> 0.2)
-      puma (>= 2.7, < 4)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -287,7 +284,6 @@ DEPENDENCIES
   pg (~> 0.15)
   pry
   puma
-  puma_worker_killer
   rails (= 4.2.6)
   rails_12factor
   redis (~> 3.2)

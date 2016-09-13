@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
+ruby '2.3.1'
 
 gem 'rails', '4.2.6'
 gem 'pg', '~> 0.15'
 gem 'puma'
-gem 'puma_worker_killer'
 
 gem 'redis', '~>3.2'
 gem 'sidekiq'
