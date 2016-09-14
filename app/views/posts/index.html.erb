@@ -1,7 +1,6 @@
 <div class="container">
   <div class="row">
-    <h4><%= @topic.title %> - Videos</h4>
-
+    <h6><%= @topic.title %> - Videos</h6>
     <% @topic.posts.each do |post| %>
       <%= render partial: "/posts/post", object: post, as: 'post' %>    
     <% end %>
@@ -9,11 +8,7 @@
   </div>
   <div class="row">
     <div class="col-md-4 col-md-offset-4">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <%= link_to 'NEW POST', new_topic_post_path, class:'btn btn-flat flat-inverse btn-rounded btn-block' %>
-        </div>
-      </div>
+      <%= link_to 'ADD VIDEO', new_topic_post_path, class:'btn btn-flat flat-success btn-rounded btn-block' %>
     </div>
   </div>
 

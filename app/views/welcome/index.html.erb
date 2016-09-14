@@ -1,15 +1,13 @@
-
-
 <div class="container">
   <div class="row"> 
 
 <ul id="topicFilterOptions">
 
-  <h4 class="active"><a href="#" class="all">All</a></h4>
+  <h6 class="active"><a href="#" class="all">All</a></h6>
 
     <% Topic.all.each do |topic| %>
 
-      <h4><%= link_to "#{topic.title}", topic, class:"#{topic.id}" %></h4>
+      <h6><%= link_to "#{topic.title}", topic, class:"#{topic.id}" %></h6>
 
     <% end %>
 
@@ -41,12 +39,12 @@
 <script type="text/javascript">
   
 $(document).ready(function() {
-  $('#topicFilterOptions h4 a').hover(function() {
+  $('#topicFilterOptions h6 a').hover(function() {
     // fetch the class of the clicked item
     var ourClass = $(this).attr('class');
 
     // reset the active class on all the buttons
-    $('#topicFilterOptions h4').removeClass('active');
+    $('#topicFilterOptions h6').removeClass('active');
     // update the active state on our clicked button
     $(this).parent().addClass('active');
 

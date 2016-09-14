@@ -19,12 +19,12 @@ ActiveRecord::Schema.define(version: 20160906114246) do
   create_table "posts", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "topic_id"
-    t.boolean  "live",       default: false
-    t.boolean  "share",      default: false
     t.text     "video_data"
-    t.boolean  "processed",  default: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.boolean  "processed",        default: false
+    t.boolean  "live",             default: true
+    t.boolean  "eligible_to_vote", default: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
 
   add_index "posts", ["topic_id"], name: "index_posts_on_topic_id", using: :btree
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20160906114246) do
     t.text     "description"
     t.string   "location"
     t.string   "wikipedia"
+    t.string   "image"
     t.date     "deadline"
     t.boolean  "active",      default: true
     t.datetime "created_at",                 null: false

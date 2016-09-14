@@ -5,6 +5,7 @@ class CreateTopics < ActiveRecord::Migration
       t.text :description
       t.string :location
       t.string :wikipedia
+      t.string :image
       t.date :deadline
       t.boolean :active, default: true
 

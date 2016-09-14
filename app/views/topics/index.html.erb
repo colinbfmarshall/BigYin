@@ -5,21 +5,19 @@
   <div class="row">
     <% @topics.each do |topic| %>
       <%= link_to topic do %>
-        <div class="col-md-4">
-          <%= render partial: "topic", object: topic, as: 'topic' %>
-        </div>
+        <%= render partial: "topic_panel", object: topic, as: 'topic' %>
       <% end %>
     <% end %>
   </div>
 
+
+<br>
   <div class="row">
     <div class="col-md-4 col-md-offset-4">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <%= link_to 'NEW TOPIC', new_topic_path, class:'btn btn-flat flat-inverse btn-rounded btn-block' %>
-        </div>
-      </div>
+      <%= link_to 'NEW TOPIC', new_topic_path, class:'btn btn-flat flat-inverse btn-rounded btn-block' %>
     </div>
   </div>
+
+
 
 </div>

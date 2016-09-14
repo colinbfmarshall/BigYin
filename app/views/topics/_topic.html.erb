@@ -1,26 +1,19 @@
   <div class="panel">
     <div class="panel-heading">
-      <h3><%= topic.title %></h3>
+      <h3 class="pull-left"><%= topic.title %></h3>
+      <h5 style="margin-top:25px" class="pull-right"><%= topic.deadline.strftime("%d %B %Y") %></h5>
     </div>
     <div class="panel-body">
-
-      <h6>Description:</h6>
-      <p><%= topic.description %></p>
-
-      <h6>Deadline:</h6>
-      <p><%= topic.deadline.strftime("%d %B %Y") %></p>
-
-      <h6>Location:</h6>
-      <p><%= topic.location %></p>
-
-      <h6>Links:</h6>
-      <p><%= link_to 'Wikipedia', "#{topic.wikipedia}", target: "blank" %></p>
-
-
-      <h6>Active:</h6>
-      <p><%= topic.active %></p>
+      <%= image_tag("#{topic.image}", style:"width:100%;") %>
       <hr>
-      <%= link_to 'ADD VIDEO', new_topic_post_path(topic), class:'btn btn-flat flat-success btn-rounded pull-right' %>
-      <%= link_to 'Edit', edit_topic_path(topic) %> | <%= link_to 'Back', topics_path %>
+      <%= link_to "#{topic.wikipedia}", target: "blank" do %>
+        <p><%= simple_format(topic.description) %></p>
+      <% end %>
+
+      <hr>
+      <div class="col-sm-8 col-sm-offset-2 center">
+        <%= link_to 'BROWSE VIDEOS', topic_posts_path(topic), class:'btn btn-flat flat-primary btn-rounded btn-block' %>
+        <%= link_to 'Edit', edit_topic_path(topic) %>
+      </div>
     </div>
   </div>
