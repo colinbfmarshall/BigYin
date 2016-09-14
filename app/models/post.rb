@@ -4,8 +4,11 @@ class Post < ActiveRecord::Base
 
   include VideoUploader[:video]
 
-  after_save :one_live_video, on: :create
   after_update :processing_completed
+  after_update :publish_latest_video
+
+  scope :published, -> { where(live: true) }
+
 
   # Need to create method that checks whether the processing has been completed on video.  
   # The object will UPDATE once transcoding is complete, so a validation on UPDATE may work.
@@ -19,11 +22,12 @@ class Post < ActiveRecord::Base
     end
   end
 
-  def one_live_video
-    other_videos_on_topic = user.posts.where(topic_id: topic.id)
-    if other_videos_on_topic.count > 1
+  def publish_latest_video
+    other_videos_on_topic = user.posts.where(topic_id: topic.id).where.not(id: self)
+    if other_videos_on_topic.count > 0
       other_videos_on_topic.update_all(live: false)
     end
+    self.update_column(:live, true) if self.processed == true
   end
 
 end

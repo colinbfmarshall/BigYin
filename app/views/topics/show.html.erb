@@ -6,7 +6,7 @@
   </div>
   <div class="row">
   
-  <% @topic.posts.each do |post| %>
+  <% @topic.posts.published.each do |post| %>
     <%= link_to post do %>
       <%= render partial: '/posts/post', object: post %>
     <% end %>

@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20160906114246) do
   create_table "posts", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "topic_id"
-    t.boolean  "live",       default: true
+    t.boolean  "live",       default: false
     t.boolean  "share",      default: false
     t.text     "video_data"
     t.boolean  "processed",  default: false

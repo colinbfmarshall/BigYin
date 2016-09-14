@@ -10,6 +10,7 @@
           <div class="overlay">
             <h6><%= post.topic.title %></h6>
             <h6>ID: <%= post.id %></h6>
+            <h6>User: <%= post.user.email %></h6>
             <h6>Live: <%= post.live %></h6>
             <h6>Processed: <%= post.processed %></h6>
           </div>
@@ -42,8 +43,10 @@
 
     <% end %>
   <% end %>
+
       <% if owner(post) %>
-          <%= link_to 'Edit', edit_topic_post_path(post.topic, post) %> | <%= link_to 'Back', topic_path(post.topic) %>
+          <% link_to 'Edit', edit_topic_post_path(post.topic, post) %> 
+          <% link_to 'Back', topic_path(post.topic) %>
       <% end %>
 
   </div>

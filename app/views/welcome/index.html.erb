@@ -22,7 +22,7 @@
 
     <div id="postList">
 
-      <% Post.all.each do |post| %>
+      <% Post.published.each do |post| %>
 
       <div class="item <%= post.topic.id %>">
 

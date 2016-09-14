@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.where(live: true)
+    @posts = Post.all.published
   end
 
   # GET /posts/1
