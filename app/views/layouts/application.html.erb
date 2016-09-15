@@ -20,7 +20,7 @@
     <div class="container">
       <% flash.each do |name, msg| %>
         <% if msg.is_a?(String) %>
-        <div class="col-sm-6 col-sm-offset-3">
+        <div class="col-sm-6 col-sm-offset-3 center">
           <div class="alert alert-<%= flash_class_name(name) %>" role="alert">
             <%= content_tag :div, msg, :id => "flash_#{name}" %>
           </div>

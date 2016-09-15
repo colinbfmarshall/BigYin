@@ -1,4 +1,4 @@
-  <div class="panel">
+  <div class="panel" style="border-radius:4px;box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;">
     <div class="panel-heading">
       <h3 class="pull-left"><%= topic.title %></h3>
       <h5 style="margin-top:25px" class="pull-right"><%= topic.deadline.strftime("%d %B %Y") %></h5>
@@ -9,11 +9,11 @@
       <%= link_to "#{topic.wikipedia}", target: "blank" do %>
         <p><%= simple_format(topic.description) %></p>
       <% end %>
-
       <hr>
       <div class="col-sm-8 col-sm-offset-2 center">
-        <%= link_to 'BROWSE VIDEOS', topic_posts_path(topic), class:'btn btn-flat flat-primary btn-rounded btn-block' %>
-        <%= link_to 'Edit', edit_topic_path(topic) %>
+        <%= link_to 'ADD VIDEOS', new_topic_post_path(topic), class:'btn btn-flat flat-success btn-rounded btn-block' %>
+        <%= link_to 'BROWSE VIDEOS', topic_posts_path(topic), class:'btn btn-flat flat-info btn-rounded btn-block' %>
+        <%= link_to 'Edit', edit_topic_path(topic), class:'btn btn-flat flat-inverse btn-rounded btn-block' if current_admin.present? %>
       </div>
     </div>
   </div>

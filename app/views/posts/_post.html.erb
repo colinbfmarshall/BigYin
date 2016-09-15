@@ -4,7 +4,7 @@
     <% if post.video.present? %>
         <% if post.processed %>
 
-        <div class="hovereffect">
+        <div class="hovereffect" style="box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;">
           <%= image_tag(post.video_url(:screenshot), style:"width:100%;height:250px;border-radius:2px;") %>
 
           <div class="overlay">
@@ -18,7 +18,6 @@
         </div>
         
         <% else %>
-          
 
         <div style="width:100%;height:290px;border-radius:2px">
           
