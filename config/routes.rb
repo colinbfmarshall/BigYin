@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :posts
   end
   
-  resources :posts, only: [:show, :index]
+  resources :posts, only: [:show]
   resources :profiles
 
   get 'welcome', :to => 'welcome#index'

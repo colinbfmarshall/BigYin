@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_topic, only: [:new, :create, :edit, :update]
+  before_action :set_topic, only: [:new, :create, :index, :edit, :update]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: %i[new create]
   respond_to :html, :xml, :json
@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all.published
+    @posts = @topic.posts
   end
 
   # GET /posts/1

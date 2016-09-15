@@ -22,17 +22,17 @@
 
           <p>
             <strong>Age:</strong>
-            <%= @profile.age %>
+            <%= Age.find_by(id: @profile.age).name %>
           </p>
 
           <p>
             <strong>Location:</strong>
-            <%= @profile.location %>
+            <%= City.find_by(id: @profile.location).name %>
           </p>
 
           <p>
             <strong>Occupation:</strong>
-            <%= @profile.occupation %>
+            <%= Occupation.find_by(id: @profile.occupation).name %>
           </p>
 
 <!--           <p>

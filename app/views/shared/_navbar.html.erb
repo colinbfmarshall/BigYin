@@ -18,12 +18,14 @@
 
         <% if user_signed_in? %>
           <li><%= link_to 'About', about_path %></li>
-          <li><%= link_to 'Browse Videos', posts_path %></li>
-          <li><%= link_to 'Upload Video', topics_path %></li>
+          <li><%= link_to 'Browse Videos', topics_path %></li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account</a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account  
+              <i class="fa fa-caret-down" aria-hidden="true"></i>
+            </a>
             <ul class="dropdown-menu">
               <li><%= link_to 'Profile', profile_path(current_user.profile) %></li>
+              <li><%= link_to 'Add Video', topics_path %></li>
               <li><%= link_to 'Settings', edit_user_registration_path %></li>
               <li><%= link_to destroy_user_session_path, method: :delete do %>Sign Out<% end %></li>
             </ul>
@@ -33,13 +35,14 @@
           <li><%= link_to 'Topics', topics_path %></li>
           <li><%= link_to destroy_user_session_path, method: :delete do %>Sign Out<% end %></li>
         <% else  %>
-          <li><%= link_to 'About', about_path %></li>
+          <li><%= link_to 'Sign In', new_user_session_path %></li>
           <li><%= link_to 'Browse Videos', topics_path %></li>
-          <li><%= link_to 'Upload Video', new_user_session_path %></li>
+          <li><%= link_to 'About', about_path %></li>
         <% end %>
         </ul>
       </div>
     </div>
   </nav>
 </header>
+
 
