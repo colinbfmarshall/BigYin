@@ -1,65 +1,84 @@
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <div style="border-radius:2px;background-color:#FF534B;width:80%;margin-left:auto;margin-right:auto;">
+                      <h1 style="font-family: 'Rancho', cursive;color:white;">Voters' Minute</h1>
+                    </div>
+                    <hr class="small">
+                    <div style="border-radius:2px;background-color:#2c3e50;padding:5px;margin:0px;width:80%;margin-left:auto;margin-right:auto;font-weight:900">
+                      <span class="subheading">
+                        <p>time to have your say<p>    
+                      </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
 <div class="container">
-  <div class="row"> 
+  <div class="row center"> 
+    <div class="col-md-offset-2 col-md-8">
+      <h1>Share your opinion</h1>
+      <p style="font-size:1.3em">Whether it's an election or a referendum, everyone's opinion matters.</p>
+      <p style="font-size:1.3em">Voters' Minute is a simple way to share your opinion. </p>
+      <p style="font-size:1.3em">Pick your issue, record a video and upload it to have your say.</p>
+      <br>
+      <%= link_to 'ADD VIDEO', topics_path, class:'btn btn-flat flat-inverse btn-rounded btn-block', style:'width:60%;margin-left:auto;margin-right:auto' %>
+    </div>
+  </div>
 
-<ul id="topicFilterOptions">
+  <hr>
 
-  <h6 class="active"><a href="#" class="all">All</a></h6>
+  <div class="row center"> 
 
-    <% Topic.all.each do |topic| %>
+    <h5>Recent Videos</h5>
+    <br>
+    <% Post.all.published.each do |post| %>
 
-      <h6><%= link_to "#{topic.title}", topic, class:"#{topic.id}" %></h6>
+      <%= render partial: "/posts/post", object: post, as: 'post' %>   
 
     <% end %>
 
-</ul>
+    <% Post.all.published.order("RANDOM()").each do |post| %>
+
+      <%= render partial: "/posts/post", object: post, as: 'post' %>   
+
+    <% end %>
+
 
   </div>
-<br>
-  <div class="row">
 
+  <hr>
 
-    <div id="postList">
-
-      <% Post.published.each do |post| %>
-
-      <div class="item <%= post.topic.id %>">
-
-        <%= render partial: "/posts/post", object: post, as: 'post' %>    
-      
-      </div>
-
-      <% end %>
-
+  <div class="row"> 
+    <div class="col-md-8">
+      <h1>CALL TO ACTION SECTION</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sodales efficitur tortor, a convallis urna fermentum sit amet. Aliquam et convallis ligula. Mauris vulputate et eros ut iaculis. Duis orci mi, tempus ut porta eget, dignissim sit amet odio. Suspendisse eget magna odio. Donec lobortis at felis sit amet semper. Phasellus finibus massa ac congue commodo.
+      </p>
     </div>
-
+    <div class="col-md-4">
+      <br>
+        <%= link_to 'SIGN IN', new_user_session_path, class:'btn btn-flat flat-default btn-rounded btn-block' %>
+        <%= link_to 'SIGN UP', new_user_registration_path, class:'btn btn-flat flat-success btn-rounded btn-block' %>
+        <%= link_to 'ABOUT', about_path, class:'btn btn-flat flat-inverse btn-rounded btn-block' %>
+    </div>
   </div>
+
+  <hr>  
+
+  <div class="row center"> 
+    <h5>Current Topics</h5>
+    <br>
+    <% Topic.all.each do |topic| %>
+      <%= link_to topic_posts_path(topic) do %>
+        <%= render partial: "/topics/topic_panel", object: topic, as: 'topic' %>   
+      <% end %>
+    <% end %>
+  </div>
+
+
 
 </div>
-
-<script type="text/javascript">
-  
-$(document).ready(function() {
-  $('#topicFilterOptions h6 a').hover(function() {
-    // fetch the class of the clicked item
-    var ourClass = $(this).attr('class');
-
-    // reset the active class on all the buttons
-    $('#topicFilterOptions h6').removeClass('active');
-    // update the active state on our clicked button
-    $(this).parent().addClass('active');
-
-    if(ourClass == 'all') {
-      // show all our items
-      $('#postList').children('div.item').show();
-    }
-    else {
-      // hide all elements that don't share ourClass
-      $('#postList').children('div:not(.' + ourClass + ')').hide();
-      // show all elements that do share ourClass
-      $('#postList').children('div.' + ourClass).show();
-    }
-    return false;
-  });
-});
-
-</script>

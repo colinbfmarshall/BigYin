@@ -1,10 +1,47 @@
 <div class="container">
+  <div class="row"> 
+
+    <div class="col-sm-12">
+      <% if @topic.present? %>
+        <div class="col-md-10" style="border-radius:4px;height:88px;background-color:white">
+          <h3><%= @topic.title %></h3>
+          <p><strong style="font-size:1.3em"><%= @topic.location %> | <%= @topic.deadline.strftime("%d %B %Y") %></strong></p>
+        </div>
+        
+        <div class="col-md-2" style="height:88px;padding:15px;background-color:white">
+          <%= image_tag(@topic.image, style:"width:100px;height:60px;border-radius:2px;border:1px solid #E9E9E9") %>
+        </div>
+
+      <% else %>
+        <div id="topicFilterOptions" class="center">
+          <% Topic.all.each do |topic| %>
+            <div class="col-md-3">
+              <div class="panel shadowy">
+                <div class="panel-body">
+                  <h6><%= link_to "#{topic.title}", topic, class:"#{topic.id}" %></h6>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <% end %>
+    </div>
+  </div>
+  <br>
   <div class="row">
-  
-    <% @posts.each do |post| %>
-      <%= render partial: "/posts/post", object: post, as: 'post' %>    
-    <% end %>
-  
+    <div id="postList">
+      <% @posts.each do |post| %>
+
+      <div class="item <%= post.topic.id %>">
+
+        <%= render partial: "/posts/post", object: post, as: 'post' %>   
+      
+      </div>
+
+      <% end %>
+
+    </div>
+
   </div>
   <div class="row">
     <div class="col-md-4 col-md-offset-4">
@@ -16,4 +53,33 @@
     </div>
   </div>
 
+
 </div>
+
+<script type="text/javascript">
+  
+$(document).ready(function() {
+  $('#topicFilterOptions h6 a').hover(function() {
+    // fetch the class of the clicked item
+    var ourClass = $(this).attr('class');
+
+    // reset the active class on all the buttons
+    $('#topicFilterOptions h6').removeClass('active');
+    // update the active state on our clicked button
+    $(this).parent().addClass('active');
+
+    if(ourClass == 'all') {
+      // show all our items
+      $('#postList').children('div.item').show();
+    }
+    else {
+      // hide all elements that don't share ourClass
+      $('#postList').children('div:not(.' + ourClass + ')').hide();
+      // show all elements that do share ourClass
+      $('#postList').children('div.' + ourClass).show();
+    }
+    return false;
+  });
+});
+
+</script>

@@ -12315,7 +12315,7 @@ button.close {
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
-  margin-bottom: 0;
+  margin-bottom: 2%;
   border-radius: 0;
 }
 
@@ -12343,7 +12343,7 @@ button.close {
 /* line 28, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/navbar.scss */
 .navbar-toggle {
   border-radius: 0;
-  margin-top: 33px;
+  margin-top: 15px;
 }
 
 /* line 33, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/navbar.scss */
@@ -12452,32 +12452,31 @@ button.close {
   /* line 120, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/navbar.scss */
   .navbar-default .navbar-nav > li > a {
     padding: 20px 18px;
-    text-transform: uppercase;
-    color: #000;
+    color: #2c3e50;
   }
 
-  /* line 126, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/navbar.scss */
+  /* line 125, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/navbar.scss */
   .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
     color: #FF534B;
   }
 
-  /* line 130, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/navbar.scss */
+  /* line 129, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/navbar.scss */
   .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
     background-color: transparent;
     color: #FF534B;
   }
 
-  /* line 135, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/navbar.scss */
+  /* line 134, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/navbar.scss */
   .navbar-nav > li:last-child > a {
     padding-right: 0;
   }
 
-  /* line 139, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/navbar.scss */
+  /* line 138, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/navbar.scss */
   .navbar-nav > li.active:last-child > a {
     padding-right: 18px;
   }
 
-  /* line 143, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/navbar.scss */
+  /* line 142, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/navbar.scss */
   .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
     color: #FF534B;
     background-color: rgba(0, 0, 0, 0.01);
@@ -12485,7 +12484,7 @@ button.close {
     padding-bottom: 37px;
   }
 
-  /* line 150, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/navbar.scss */
+  /* line 149, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/navbar.scss */
   .navbar-default .navbar-nav > .active > a:after {
     position: absolute;
     display: block;
@@ -12516,7 +12515,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 12px;
   color: #95a5a6;
-  background-color: #fafafa;
+  background-color: #fbfbfb;
 }
 
 @media (min-width: 1200px) {
@@ -14801,8 +14800,303 @@ address {
   margin-top: 0;
 }
 
-/* line 12, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/application.scss */
+/* line 1, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/image-hover.scss */
+.hovereffect {
+  width: 100%;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+
+/* line 10, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/image-hover.scss */
+.hovereffect .overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-transition: all .4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+/* line 23, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/image-hover.scss */
+.hovereffect img {
+  display: block;
+  position: relative;
+  -webkit-transition: all .4s linear;
+  transition: all .4s linear;
+}
+
+/* line 30, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/image-hover.scss */
+.hovereffect h6 {
+  color: #fff;
+  text-align: center;
+  position: relative;
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-transform: translatey(-100px);
+  -ms-transform: translatey(-100px);
+  transform: translatey(-100px);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  padding: 10px;
+}
+
+/* line 43, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/image-hover.scss */
+.hovereffect:hover img {
+  -ms-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+/* line 49, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/image-hover.scss */
+.hovereffect:hover .overlay {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* line 54, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/image-hover.scss */
+.hovereffect:hover h6, .hovereffect:hover a.info {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -ms-transform: translatey(0);
+  -webkit-transform: translatey(0);
+  transform: translatey(0);
+}
+
+/* line 5, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/posts.scss */
+.post_partial {
+  margin-bottom: 30px;
+}
+
+/* line 9, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/posts.scss */
+.loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* line 2, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
+#topicFilterOptions h4 {
+  margin: 20px;
+  display: inline;
+}
+
+/* line 8, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
+p strong {
+  font-size: 1.5em;
+  color: #337ab7;
+}
+
+/* line 13, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
+.intro-header {
+  background-color: #777777;
+  background: no-repeat center center;
+  background-attachment: scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  margin-bottom: 50px;
+}
+
+/* line 23, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
+.intro-header .site-heading,
+.intro-header .post-heading,
+.intro-header .page-heading {
+  padding: 100px 0 50px;
+  color: white;
+}
+
+@media only screen and (min-width: 768px) {
+  /* line 30, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
+  .intro-header .site-heading,
+  .intro-header .post-heading,
+  .intro-header .page-heading {
+    padding: 150px 0;
+  }
+}
+/* line 36, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
+.intro-header .site-heading,
+.intro-header .page-heading {
+  text-align: center;
+}
+
+/* line 40, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
+.intro-header .site-heading h1,
+.intro-header .page-heading h1 {
+  margin-top: 0;
+  font-size: 50px;
+}
+
+/* line 45, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
+.intro-header .site-heading .subheading,
+.intro-header .page-heading .subheading {
+  font-size: 24px;
+  line-height: 1.1;
+  display: block;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  margin: 10px 0 0;
+}
+
+@media only screen and (min-width: 768px) {
+  /* line 55, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
+  .intro-header .site-heading h1,
+  .intro-header .page-heading h1 {
+    font-size: 80px;
+  }
+}
+/* line 60, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
+.intro-header .post-heading h1 {
+  font-size: 35px;
+}
+
+/* line 63, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
+.intro-header .post-heading .subheading,
+.intro-header .post-heading .meta {
+  line-height: 1.1;
+  display: block;
+}
+
+/* line 68, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
+.intro-header .post-heading .subheading {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  margin: 10px 0 30px;
+  font-weight: 600;
+}
+
+/* line 74, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
+.intro-header .post-heading .meta {
+  font-family: 'Lora', 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+/* line 80, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
+.intro-header .post-heading .meta a {
+  color: white;
+}
+
+@media only screen and (min-width: 768px) {
+  /* line 84, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
+  .intro-header .post-heading h1 {
+    font-size: 55px;
+  }
+
+  /* line 87, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
+  .intro-header .post-heading .subheading {
+    font-size: 30px;
+  }
+}
+/*
+ * jQuery File Upload UI Plugin CSS
+ * https://github.com/blueimp/jQuery-File-Upload
+ *
+ * Copyright 2010, Sebastian Tschan
+ * https://blueimp.net
+ *
+ * Licensed under the MIT license:
+ * http://www.opensource.org/licenses/MIT
+ */
+/* line 13, /Users/colinmarshall/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload-ui.scss */
+.fileupload-buttonbar .btn,
+.fileupload-buttonbar .toggle {
+  margin-bottom: 5px;
+}
+
+/* line 17, /Users/colinmarshall/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload-ui.scss */
+.progress-animated .progress-bar,
+.progress-animated .bar {
+  background: url(/assets/progressbar-a45ab53b619988cefd45f49cfacc604dd499b93f53a96927cf7b2d965f421f48.gif) !important;
+  filter: none;
+}
+
+/* line 22, /Users/colinmarshall/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload-ui.scss */
+.fileupload-process {
+  float: right;
+  display: none;
+}
+
+/* line 26, /Users/colinmarshall/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload-ui.scss */
+.fileupload-processing .fileupload-process,
+.files .processing .preview {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url(/assets/loading-b84750cc5a395288fcfd0cf42e3a60d6135e2f14db83fce05e97e5abacc2f9b4.gif) center no-repeat;
+  background-size: contain;
+}
+
+/* line 34, /Users/colinmarshall/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload-ui.scss */
+.files audio,
+.files video {
+  max-width: 300px;
+}
+
+@media (max-width: 767px) {
+  /* line 40, /Users/colinmarshall/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload-ui.scss */
+  .fileupload-buttonbar .toggle,
+  .files .toggle,
+  .files .btn span {
+    display: none;
+  }
+
+  /* line 45, /Users/colinmarshall/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload-ui.scss */
+  .files .name {
+    width: 80px;
+    word-wrap: break-word;
+  }
+
+  /* line 49, /Users/colinmarshall/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload-ui.scss */
+  .files audio,
+  .files video {
+    max-width: 80px;
+  }
+
+  /* line 53, /Users/colinmarshall/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload-ui.scss */
+  .files img,
+  .files canvas {
+    max-width: 100%;
+  }
+}
+/* line 17, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/application.scss */
 body {
   overflow: hidden;
   overflow-y: auto;
+}
+
+/* line 22, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/application.scss */
+.center {
+  text-align: center;
+}
+
+/* line 26, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/application.scss */
+.shadowy {
+  box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
 }

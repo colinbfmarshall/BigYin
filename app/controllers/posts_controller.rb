@@ -6,10 +6,11 @@ class PostsController < ApplicationController
 
   def index
     if @topic.present?
-      @posts = @topic.posts
+      @posts = @topic.posts.published
     else
-      @posts = Post.all
+      @posts = Post.published
     end
+
   end
 
   def show

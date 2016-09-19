@@ -11,8 +11,8 @@
     font-size: 24px;
     font-weight: 600;
     color:#2c3e50 !important;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     font-family: 'Rancho', cursive;
 }
 
@@ -107,7 +107,7 @@
 
 @media (min-width: 768px) {
     .navbar-default {
-        height: 60px;
+        height: 40px;
         -webkit-transition: all 0.2s ease-in-out;
         transition: all 0.2s ease-in-out;
     }
@@ -118,7 +118,7 @@
     }
 
     .navbar-default .navbar-nav > li > a {
-        padding: 20px 18px;
+        padding: 15px 15px;
         color: #2c3e50;
     }
 

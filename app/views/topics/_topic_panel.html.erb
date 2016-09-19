@@ -8,6 +8,8 @@
       <hr>
       <%= link_to 'BROWSE VIDEOS', topic_posts_path(topic), class:'btn btn-flat flat-info btn-rounded btn-sm', style:'margin:5px' %>
       <%= link_to 'ADD VIDEO', new_topic_post_path(topic), class:'btn btn-flat flat-success btn-rounded btn-sm', style:'margin:5px' %>
+      <br>
+      <h6>Videos:  <%= topic.posts.published.count %></h6>
 
     </div>
     
