@@ -6,61 +6,61 @@
         <div class="panel-body">
 
           <p>
-            <strong>User:</strong>
+            User ID:
             <%= @profile.user.id %>
           </p>
 
           <p>
-            <strong>First name:</strong>
+            First name:
             <%= @profile.first_name %>
           </p>
 
           <p>
-            <strong>Last name:</strong>
+            Last name:
             <%= @profile.last_name %>
           </p>
 
           <p>
-            <strong>Age:</strong>
+            Age:
             <%= Age.find_by(id: @profile.age).name %>
           </p>
 
           <p>
-            <strong>Location:</strong>
+            Location:
             <%= City.find_by(id: @profile.location).name %>
           </p>
 
           <p>
-            <strong>Occupation:</strong>
+            Occupation:
             <%= Occupation.find_by(id: @profile.occupation).name %>
           </p>
 
 <!--           <p>
-            <strong>Gender:</strong>
+            Gender:
             <% @profile.gender %>
           </p>
 
           <p>
-            <strong>Marital status:</strong>
+            Marital status:
             <% @profile.marital_status %>
           </p> -->
 
           <p>
-            <strong>Share:</strong>
+            Share:
             <%= @profile.share %>
           </p>
 
           <p>
-            <strong>Videos:</strong>
+            Videos:
             <%= @profile.user.posts.count %>
           </p>
+
+          <%= link_to 'EDIT', edit_profile_path(@profile), class:'btn btn-flat flat-default btn-rounded pull-right' %>
 
         </div>
       </div>
     </div>
 
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
   </div>
 
   <div class="row">
