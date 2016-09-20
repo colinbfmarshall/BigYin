@@ -2,13 +2,14 @@ class Post < ActiveRecord::Base
   belongs_to :user
   belongs_to :topic
 
+  acts_as_votable
+
   include VideoUploader[:video]
 
   after_update :processing_completed
   after_update :publish_latest_video
 
   scope :published, -> { where(live: true) }
-
 
   # Need to create method that checks whether the processing has been completed on video.  
   # The object will UPDATE once transcoding is complete, so a validation on UPDATE may work.

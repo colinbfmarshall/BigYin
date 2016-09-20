@@ -15,6 +15,13 @@ Rails.application.routes.draw do
   resources :posts, only: [:show, :index]
   resources :profiles
 
+  resources :posts do 
+    member do
+      put "like", to: "posts#upvote"
+      put "dislike", to: "posts#downvote"
+    end
+  end 
+
   get 'welcome', :to => 'welcome#index'
   get 'about', :to => 'welcome#about'
   get 'conditions', :to => 'welcome#conditions'

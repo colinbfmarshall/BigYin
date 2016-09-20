@@ -41,6 +41,8 @@ gem 'pry'
 
 gem 'meta-tags'
 
+gem 'acts_as_votable', '~> 0.10.0'
+
 group :development, :test do
   gem 'byebug'
   gem 'letter_opener'

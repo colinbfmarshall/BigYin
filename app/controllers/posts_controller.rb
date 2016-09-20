@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_topic, only: [:new, :create, :index, :edit, :update]
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
   before_action :authenticate_user!, only: %i[new create]
   respond_to :html, :xml, :json
 
@@ -58,6 +58,16 @@ class PostsController < ApplicationController
     end
   end
 
+  def upvote
+    @post.upvote_by current_user
+    next_post
+  end
+
+  def downvote
+    @post.downvote_from current_user
+    next_post
+  end
+
   private
 
     def set_topic
@@ -66,6 +76,16 @@ class PostsController < ApplicationController
 
     def set_post
       @post = Post.find(params[:id])
+    end
+
+    def next_post
+      @other = Post.all.published.order("RANDOM()").reject { |p| p.id == set_post.id }
+      if @other.count == 0
+        redirect_to posts_path
+      else 
+        @next = @other.first
+        redirect_to @next
+      end
     end
 
     def post_params

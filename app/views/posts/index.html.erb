@@ -30,7 +30,7 @@
   <br>
   <div class="row">
     <div id="postList">
-      <% @posts.each do |post| %>
+      <% @posts.order(:cached_weighted_average => :asc).each do |post| %>
 
       <div class="item <%= post.topic.id %>">
 

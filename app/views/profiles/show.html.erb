@@ -35,16 +35,6 @@
             <%= Occupation.find_by(id: @profile.occupation).name %>
           </p>
 
-<!--           <p>
-            Gender:
-            <% @profile.gender %>
-          </p>
-
-          <p>
-            Marital status:
-            <% @profile.marital_status %>
-          </p> -->
-
           <p>
             Share:
             <%= @profile.share %>
@@ -64,11 +54,27 @@
   </div>
 
   <div class="row">
+    <h5>My Videos</h5> 
+    <hr style="margin-top:5px">
     <% @profile.user.posts.each do |post| %>
       <%= render partial: "/posts/post", object: post, as: 'post' %>    
     <% end %>
-
   </div>
 
+  <div class="row">
+    <h5>Liked Videos</h5>
+    <hr style="margin-top:5px">
+    <% @profile.user.find_liked_items.each do |post| %>
+      <%= render partial: "/posts/post", object: post, as: 'post' %>    
+    <% end %>
+  </div>
+
+  <div class="row">
+    <h5>Disliked Videos</h5>
+    <hr style="margin-top:5px">
+    <% @profile.user.find_disliked_items.each do |post| %>
+      <%= render partial: "/posts/post", object: post, as: 'post' %>    
+    <% end %>
+  </div>
 
 </div>
