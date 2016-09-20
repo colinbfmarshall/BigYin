@@ -1,0 +1,30 @@
+<div class="col-lg-4 col-lg-offset-4">
+  <div class="panel panel-default">
+    <div class="panel-heading center" style="background-color:#FF534B">
+      <h3 style="color:white">ADMIN LOG IN</h3>
+    </div>
+    <div class="panel-body">
+
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+          <%= devise_error_messages! %>
+
+          <div class="form-group">
+            <%= f.input :email, autocomplete: "off", input_html: { class: 'form-control' } %>
+          </div>
+
+          <div class="form-group">
+            <%= f.input :password, autocomplete: "off", input_html: { class: 'form-control' } %>
+            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          </div>
+
+          <div class="actions center">
+            <%= f.submit "Log in", class:"btn btn-flat flat-danger btn-rounded btn-block" %>
+          </div>
+
+        <% end %>
+        <hr>
+      <%= render "admins/shared/links" %>
+    </div>
+  </div>
+</div>

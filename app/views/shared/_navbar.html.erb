@@ -33,10 +33,10 @@
           </li> 
 
         <% elsif admin_signed_in? %>
-
-          <li><%= link_to 'Videos', posts_path %></li>
-          <li><%= link_to 'Topics', topics_path %></li>
-          <li><%= link_to destroy_user_session_path, method: :delete do %>Sign Out<% end %></li>
+          <li><%= link_to 'USERS', profiles_path %></li>
+          <li><%= link_to 'VIDEOS', posts_path %></li>
+          <li><%= link_to 'TOPICS', topics_path %></li>
+          <li><%= link_to destroy_user_session_path, method: :delete do %>SIGN OUT<% end %></li>
 
         <% else  %>
 
