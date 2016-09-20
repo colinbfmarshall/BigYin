@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_topic, only: [:new, :create, :index, :edit, :update]
   before_action :set_post, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
-  before_action :authenticate_user!, only: %i[new create]
+  before_action :authenticate_user!, only: %i[new create upvote downvote]
   respond_to :html, :xml, :json
 
   def index
