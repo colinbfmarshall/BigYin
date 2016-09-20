@@ -24,7 +24,7 @@
       <h1>Share your opinion</h1>
       <p style="font-size:1.3em">Whether it's an election or a referendum, everyone's opinion matters.</p>
       <p style="font-size:1.3em">Voters' Minute is a simple way to share your opinion. </p>
-      <p style="font-size:1.3em">Pick your issue, record a video and upload it to have your say.</p>
+      <p style="font-size:1.3em">Pick an issue, record a video and upload it to have your say.</p>
       <br>
       <%= link_to 'ADD VIDEO', topics_path, class:'btn btn-flat flat-inverse btn-rounded btn-block', style:'width:60%;margin-left:auto;margin-right:auto' %>
     </div>
@@ -36,18 +36,11 @@
 
     <h5>Recent Videos</h5>
     <br>
-    <% Post.all.published.each do |post| %>
+    <% Post.all.published.limit(8).each do |post| %>
 
       <%= render partial: "/posts/post", object: post, as: 'post' %>   
 
     <% end %>
-
-    <% Post.all.published.order("RANDOM()").each do |post| %>
-
-      <%= render partial: "/posts/post", object: post, as: 'post' %>   
-
-    <% end %>
-
 
   </div>
 
