@@ -114,6 +114,7 @@ GEM
     heroku-api (0.4.2)
       excon (~> 0.45)
       multi_json (~> 1.8)
+    hirefire-resource (0.3.11)
     i18n (0.7.0)
     image_processing (0.4.1)
     jbuilder (2.6.0)
@@ -274,6 +275,7 @@ DEPENDENCIES
   fastimage
   figaro
   font-awesome-sass
+  hirefire-resource
   image_processing
   jbuilder (~> 2.0)
   jquery-fileupload-rails

@@ -8,6 +8,7 @@ gem 'puma'
 gem 'redis', '~>3.2'
 gem 'sidekiq'
 gem 'autoscaler'
+gem 'hirefire-resource'
 
 gem 'newrelic_rpm'
 
