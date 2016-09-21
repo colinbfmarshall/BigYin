@@ -29,8 +29,8 @@ class PostsController < ApplicationController
     @post.user = current_user
     respond_to do |format|
       if @post.save
-        format.html { redirect_to root_path, notice: 'Post created but we need to process it.' }
-        format.json {render action: 'show', :id => @post.id}
+        format.html { redirect_to root_path, notice: 'Your video has been uploaded but we need to process it, this may take a few minutes.' }
+        format.json {render action: 'show', :id => @post.id, notice: 'Your video has been uploaded but we need to process it, this may take a few minutes.'}
       else
         format.html { render :new }
         format.json { render json: @post.errors, status: :unprocessable_entity }

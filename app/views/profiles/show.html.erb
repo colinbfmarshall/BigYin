@@ -55,7 +55,7 @@
       <div class="row">
         <h5>My Videos</h5> 
         <hr style="margin-top:5px">
-        <% @profile.user.posts.each do |post| %>
+        <% @profile.user.posts.published.each do |post| %>
           <%= render partial: "/posts/post", object: post, as: 'post' %>    
         <% end %>
       </div>
