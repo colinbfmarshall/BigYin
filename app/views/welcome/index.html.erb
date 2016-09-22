@@ -1,88 +1,104 @@
 <header class="intro-header">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!--             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"> -->
                 <div class="site-heading">
+                    
                     <div style="border-radius:2px;background-color:#FF534B;width:80%;margin-left:auto;margin-right:auto;">
                       <h1 style="font-family: 'Rancho', cursive;color:white;">Voters' Minute</h1>
                     </div>
+
                     <hr class="small">
+
                     <div style="border-radius:2px;background-color:#2c3e50;padding:5px;margin:0px;width:80%;margin-left:auto;margin-right:auto;font-weight:900">
+                      
                       <span class="subheading">
                         <p>it's time to have your say<p>    
                       </span>
+
                     </div>
                 </div>
-            </div>
+            <!-- </div> -->
         </div>
     </div>
 </header>
 
-<div class="container">
-  <div class="row center"> 
-    <div class="col-md-offset-2 col-md-8">
-      <h1>Share your opinion</h1>
-      <p style="font-size:1.3em">Whether it's an election or a referendum, everyone's opinion matters.</p>
-      <p style="font-size:1.3em">Voters' Minute is a simple way to share your opinion. </p>
-      <p style="font-size:1.3em">Pick an issue, record a video and upload it to have your say.</p>
+
+<div class="fluid-container" style="background:white;padding:40px;padding-top:20px">
+  <div class="container">
+
+    <div class="row center"> 
+      <div class="col-md-offset-2 col-md-8">
+        <h1>Share your opinion</h1>
+        <p style="font-size:1.3em">Whether it's an election or a referendum, everyone's opinion matters.</p>
+        <p style="font-size:1.3em">Voters' Minute is a simple way to share your opinion. </p>
+        <p style="font-size:1.3em">Pick an issue, record a video and upload it to have your say.</p>
+        <br>
+        <%= link_to 'ADD VIDEO', topics_path, class:'btn btn-flat flat-inverse btn-rounded btn-block', style:'width:60%;margin-left:auto;margin-right:auto' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="fluid-container" style="padding:40px">
+  <div class="container">
+    <div class="row center"> 
+      <h5>Recent Videos</h5>
+      <hr>
       <br>
-      <%= link_to 'ADD VIDEO', topics_path, class:'btn btn-flat flat-inverse btn-rounded btn-block', style:'width:60%;margin-left:auto;margin-right:auto' %>
-    </div>
-  </div>
-
-  <hr>
-
-  <div class="row center"> 
-
-    <h5>Recent Videos</h5>
-    <br>
-    <% Post.all.published.limit(8).each do |post| %>
-
-      <%= render partial: "/posts/post", object: post, as: 'post' %>   
-
-    <% end %>
-
-  </div>
-
-  <hr>
-
-  <div class="row"> 
-    <div class="col-md-8">
-      <h1>CALL TO ACTION SECTION</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sodales efficitur tortor, a convallis urna fermentum sit amet. Aliquam et convallis ligula. Mauris vulputate et eros ut iaculis. Duis orci mi, tempus ut porta eget, dignissim sit amet odio. Suspendisse eget magna odio. Donec lobortis at felis sit amet semper. Phasellus finibus massa ac congue commodo.
-      </p>
-    </div>
-    <div class="col-md-4">
-      <br>
-        <%= link_to 'SIGN IN', new_user_session_path, class:'btn btn-flat flat-default btn-rounded btn-block' %>
-        <%= link_to 'SIGN UP', new_user_registration_path, class:'btn btn-flat flat-success btn-rounded btn-block' %>
-        <%= link_to 'ABOUT', about_path, class:'btn btn-flat flat-inverse btn-rounded btn-block' %>
-    </div>
-  </div>
-
-  <hr>  
-
-  <div class="row center"> 
-    <h5>Current Topics</h5>
-    <br>
-    <% Topic.all.each do |topic| %>
-      <%= link_to topic_posts_path(topic) do %>
-        <%= render partial: "/topics/topic_panel", object: topic, as: 'topic' %>   
+      <% Post.all.published.limit(8).each do |post| %>
+        <%= render partial: "/posts/post", object: post, as: 'post' %>   
       <% end %>
-    <% end %>
-  </div>
-
-  <hr>
-
-  <div class="row center"> 
-    <div class="col-md-offset-2 col-md-8">
-      <h1>Request Topic</h1>
-      <p style="font-size:1.3em">If there's something you want to debate or learn more about.</p>
-      <p style="font-size:1.3em">Then let us know and we'll add the topic to the website. </p>
-      <br>
-      <%= link_to 'ADD TOPIC', topics_path, class:'btn btn-flat flat-inverse btn-rounded btn-block', style:'width:60%;margin-left:auto;margin-right:auto' %>
     </div>
   </div>
+</div>
 
+<div class="fluid-container" style="background:#34495e;padding:40px;color:white">
+  <div class="container">
+    <div class="row"> 
+      <div class="col-md-8">
+        <h1 style="color:white">Why?</h1>
+        <p style="font-size:1.3em">
+          Because opinions matters.  All too often the important debates and issues are dominated by politicians with campaign sound bites, polls, celebrities, tabloid journalism or the echo chamber of social media.  
+          <br><br>
+          Voters' Minute wants to change that by giving every person a chance to express their opinion on what matters to them.  You don't have to agree with everyone but that doesn't mean you shouldn't listen.
+        </p>
+      </div>
+      <div class="col-md-offset-1 col-md-3">
+        <br><br><br>
+          <%= link_to 'SIGN UP', new_user_registration_path, class:'btn btn-flat flat-success btn-rounded btn-block', style:'font-size:1.7em;width:80%;margin-left:auto;margin-right:auto;margin-top:20px' %>
+          <%= link_to 'ABOUT', about_path, class:'btn btn-flat flat-default btn-rounded btn-block', style:'font-size:1.7em;width:80%;margin-left:auto;margin-right:auto;margin-top:20px' %>
+      </div>
+    </div>
 
+  </div>
+</div>
+
+<div class="fluid-container" style="background:white;padding:40px">
+  <div class="container">
+    <div class="row center"> 
+      <h5>Current Topics</h5>
+      <hr>
+      <br>
+      <% Topic.all.each do |topic| %>
+        <%= link_to topic_posts_path(topic) do %>
+          <%= render partial: "/topics/topic_panel", object: topic, as: 'topic' %>   
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="fluid-container" style="padding:40px">
+  <div class="container">
+    <div class="row center"> 
+      <div class="col-md-offset-2 col-md-8">
+        <h1>Request Topic or Issue</h1>
+        <p style="font-size:1.3em">If there's something you want to debate or learn more about.</p>
+        <p style="font-size:1.3em">Then let us know and we'll add the topic to the website. </p>
+        <br>
+        <%= link_to 'ADD TOPIC', topics_path, class:'btn btn-flat flat-inverse btn-rounded btn-block', style:'width:60%;margin-left:auto;margin-right:auto' %>
+      </div>
+    </div>
+  </div>
 </div>

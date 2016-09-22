@@ -41,15 +41,15 @@
 
           <div class="btn-group" role="group" style="margin-top:20px">
             <%= link_to dislike_post_path(@post), method: :put, class:"btn btn-flat flat-warning btn-rounded btn-md", "type" => "submit", "title" => "Disagree"  do %>
-              <i class="fa fa-thumbs-down fa-2x" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Dislike"></i>
+              <i class="fa fa-thumbs-down fa-2x" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="DISAGREE"></i>
             <% end %>
             
-            <%= link_to root_path, class:'btn btn-flat flat-danger btn-rounded btn-md' do %><i class="fa fa-bell fa-2x" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Report Video"></i><% end %>
+            <%= link_to root_path, class:'btn btn-flat flat-danger btn-rounded btn-md' do %><i class="fa fa-bell fa-2x" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="REPORT"></i><% end %>
             
-            <%= link_to root_path, class:'btn btn-flat flat-success btn-rounded btn-md' do %><i class="fa fa-heart fa-2x" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Favourite"></i><% end %>
+            <%= link_to root_path, class:'btn btn-flat flat-success btn-rounded btn-md' do %><i class="fa fa-heart fa-2x" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="FAVOURITE"></i><% end %>
             
             <%= link_to like_post_path(@post), method: :put, class:"btn btn-flat flat-info btn-rounded btn-md", "type" => "submit", "title" => "Agree"  do %>
-              <i class="fa fa-thumbs-up fa-2x" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Like"></i>
+              <i class="fa fa-thumbs-up fa-2x" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="AGREE"></i>
             <% end %>
           </div>
 

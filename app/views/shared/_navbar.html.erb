@@ -18,8 +18,8 @@
 
         <% if user_signed_in? %>
 
-          <li><%= link_to 'Browse Videos', posts_path %></li>
-          <li><%= link_to 'Browse Topics', topics_path %></li>
+          <li><%= link_to 'Videos', posts_path %></li>
+          <li><%= link_to 'Topics', topics_path %></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account  
               <i class="fa fa-caret-down" aria-hidden="true"></i>
@@ -41,8 +41,7 @@
         <% else  %>
 
           <li><%= link_to 'Sign In', new_user_session_path %></li>
-          <li><%= link_to 'Browse Videos', posts_path %></li>
-          <li><%= link_to 'Browse Topics', topics_path %></li>
+          <li><%= link_to 'Videos', posts_path %></li>
           <li><%= link_to 'About', about_path %></li>
 
         <% end %>

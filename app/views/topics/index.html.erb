@@ -5,7 +5,21 @@
   <div class="row">
     <% @topics.each do |topic| %>
       <%= link_to topic_posts_path(topic) do %>
-        <%= render partial: "topic_panel", object: topic, as: 'topic' %>
+
+      <div class="col-sm-12">
+        <div class="panel" style="border-radius:4px;box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;">
+          <div class="panel-body">
+            <div class="col-md-10 col-sm-8 col-xs-8">
+              <h3><%= topic.title %></h3>
+              <p><strong style="font-size:1.3em"><%= topic.location %> | <%= topic.deadline.strftime("%d %B %Y") %></strong></p>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-4 center" style="padding:15px">
+              <%= image_tag(topic.image, style:"width:100px;height:60px;border-radius:2px;border:1px solid #E9E9E9") %>
+            </div>
+          </div>
+        </div>
+      </div>
+      
       <% end %>
     <% end %>
   </div>
