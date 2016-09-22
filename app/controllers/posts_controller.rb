@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_topic, only: [:new, :create, :index, :edit, :update]
+  before_action :set_topic, only: [:new, :create, :index, :edit, :update, :upvote, :downvote]
   before_action :set_post, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
   before_action :authenticate_user!, only: %i[new create upvote downvote]
   respond_to :html, :xml, :json
@@ -79,9 +79,10 @@ class PostsController < ApplicationController
     end
 
     def next_post
-      @other = Post.all.published.order("RANDOM()").reject { |p| p.id == set_post.id }
+      topic_posts = @post.topic.posts
+      @other = topic_posts.published.order("RANDOM()").reject { |p| p.id == set_post.id }
       if @other.count == 0
-        redirect_to posts_path
+        redirect_to posts_path, notice: "There's only one video on this topic right now. Why not share us with your friends!" 
       else 
         @next = @other.first
         redirect_to @next
