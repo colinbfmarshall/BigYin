@@ -12324,8 +12324,8 @@ button.close {
   font-size: 24px;
   font-weight: 600;
   color: #2c3e50 !important;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   font-family: 'Rancho', cursive;
 }
 
@@ -12438,7 +12438,7 @@ button.close {
 @media (min-width: 768px) {
   /* line 109, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/navbar.scss */
   .navbar-default {
-    height: 60px;
+    height: 40px;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
   }
@@ -12451,7 +12451,7 @@ button.close {
 
   /* line 120, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/navbar.scss */
   .navbar-default .navbar-nav > li > a {
-    padding: 20px 18px;
+    padding: 15px 15px;
     color: #2c3e50;
   }
 
@@ -14913,46 +14913,50 @@ p strong {
 
 /* line 13, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
 .intro-header {
+  min-height: 480px;
+  margin-top: -80px;
   background-color: #777777;
   background: no-repeat center center;
   background-attachment: scroll;
+  background: url("homepage.png");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  margin-bottom: 50px;
 }
 
-/* line 23, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
+/* line 26, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
 .intro-header .site-heading,
 .intro-header .post-heading,
 .intro-header .page-heading {
-  padding: 100px 0 50px;
+  margin: 0 auto;
+  margin-top: 155px;
   color: white;
 }
 
 @media only screen and (min-width: 768px) {
-  /* line 30, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
+  /* line 35, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
   .intro-header .site-heading,
   .intro-header .post-heading,
   .intro-header .page-heading {
-    padding: 150px 0;
+    margin: 0 auto;
+    margin-top: 155px;
   }
 }
-/* line 36, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
+/* line 43, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
 .intro-header .site-heading,
 .intro-header .page-heading {
   text-align: center;
 }
 
-/* line 40, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
+/* line 48, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
 .intro-header .site-heading h1,
 .intro-header .page-heading h1 {
   margin-top: 0;
   font-size: 50px;
 }
 
-/* line 45, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
+/* line 54, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
 .intro-header .site-heading .subheading,
 .intro-header .page-heading .subheading {
   font-size: 24px;
@@ -14964,25 +14968,25 @@ p strong {
 }
 
 @media only screen and (min-width: 768px) {
-  /* line 55, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
+  /* line 65, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
   .intro-header .site-heading h1,
   .intro-header .page-heading h1 {
     font-size: 80px;
   }
 }
-/* line 60, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
+/* line 71, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
 .intro-header .post-heading h1 {
   font-size: 35px;
 }
 
-/* line 63, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
+/* line 75, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
 .intro-header .post-heading .subheading,
 .intro-header .post-heading .meta {
   line-height: 1.1;
   display: block;
 }
 
-/* line 68, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
+/* line 81, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
 .intro-header .post-heading .subheading {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 24px;
@@ -14990,7 +14994,7 @@ p strong {
   font-weight: 600;
 }
 
-/* line 74, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
+/* line 88, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
 .intro-header .post-heading .meta {
   font-family: 'Lora', 'Times New Roman', serif;
   font-style: italic;
@@ -14998,18 +15002,18 @@ p strong {
   font-size: 20px;
 }
 
-/* line 80, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
+/* line 95, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
 .intro-header .post-heading .meta a {
   color: white;
 }
 
 @media only screen and (min-width: 768px) {
-  /* line 84, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
+  /* line 100, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
   .intro-header .post-heading h1 {
     font-size: 55px;
   }
 
-  /* line 87, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
+  /* line 103, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
   .intro-header .post-heading .subheading {
     font-size: 30px;
   }
