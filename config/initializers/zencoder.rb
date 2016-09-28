@@ -1,0 +1,1 @@
+Zencoder.api_key = ENV.fetch("ZENCODER_API_KEY")
