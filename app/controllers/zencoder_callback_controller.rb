@@ -22,12 +22,4 @@ class ZencoderCallbackController < ApplicationController
     render :nothing => true
   end
  
-  private
- 
-#   def sanitize_params(params)
-#     params.delete(:action)
-#     params.delete(:controller)
-#     params
-#   end
-
 end

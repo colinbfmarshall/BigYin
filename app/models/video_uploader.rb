@@ -17,6 +17,8 @@ class VideoUploader < Shrine
     # mov.delete
 
     # {video: video, screenshot: screenshot}
+  end 
+
 
 private
   def zencode(*args)
@@ -73,5 +75,4 @@ private
     @base_url ||= File.dirname(@post.video.url)
   end
 
-end 
 end
