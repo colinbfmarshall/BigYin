@@ -22,9 +22,9 @@ Rails.application.routes.draw do
     end
   end 
 
+  post "zencoder-callback" => "zencoder_callback#create", :as => "zencoder_callback"
+
   get 'welcome', :to => 'welcome#index'
   get 'about', :to => 'welcome#about'
   get 'conditions', :to => 'welcome#conditions'
-
-
 end
