@@ -67,12 +67,11 @@ private
     z_response = Zencoder::Job.create(params)
     @post.video_data[:request] = z_response.body
     @post.save(:validate => false)
-
-
-    def base_url
-      @base_url ||= File.dirname(@post.video.url)
-    end
-
   end
 
+  def base_url
+    @base_url ||= File.dirname(@post.video.url)
+  end
+
+end 
 end
