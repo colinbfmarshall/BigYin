@@ -17,6 +17,9 @@ Shrine.plugin :activerecord
 Shrine.plugin :logging, logger: Rails.logger
 Shrine.plugin :direct_upload, presign: true
 Shrine.plugin :backgrounding
+Shrine.plugin :transloadit,
+  auth_key: ENV.fetch("TRANSLOADIT_KEY"),
+  auth_secret: ENV.fetch("TRANSLOADIT_SECRET")
 
 Shrine::Attacher.promote { |data| PromoteJob.perform_async(data) }
 Shrine::Attacher.delete { |data| DeleteJob.perform_async(data) }

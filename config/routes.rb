@@ -22,7 +22,10 @@ Rails.application.routes.draw do
     end
   end 
 
-  post "zencoder-callback" => "zencoder_callback#create", :as => "zencoder_callback"
+  post "/webhooks/transloadit" do
+    Shrine::Attacher.transloadit_save(params)
+  end
+
 
   get 'welcome', :to => 'welcome#index'
   get 'about', :to => 'welcome#about'

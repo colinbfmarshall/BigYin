@@ -31,14 +31,13 @@ gem 'jquery-fileupload-rails'
 gem 'shrine'
 gem 'aws-sdk', '~> 2.1'
 gem 'streamio-ffmpeg', '2.0'
+gem "shrine-transloadit"
 
 gem 'roda'
 gem 'sucker_punch', '~> 2.0'
 gem 'image_processing'
 gem 'mini_magick'
 gem 'fastimage'
-
-gem "zencoder", "~> 2.0"
 
 gem 'figaro'
 gem 'pry'
