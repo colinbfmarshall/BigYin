@@ -3,6 +3,6 @@ class PromoteJob
   sidekiq_options :retry => 3
   
   def perform(data)
-    Shrine::Attacher.promote(data)
+    attacher = Shrine::Attacher.transloadit_process(data)
   end
 end

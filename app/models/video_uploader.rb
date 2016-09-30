@@ -19,7 +19,6 @@ class VideoUploader < Shrine
   #   {video: video, screenshot: screenshot}
   # end
 
-
   def transloadit_process(io, context)
     original = transloadit_file(io)
       .add_step('flash_encoding', '/video/encode',
@@ -39,9 +38,6 @@ class VideoUploader < Shrine
 
     if ENV["RACK_ENV"] == "production"
       notify_url = "https://infinite-reaches-64522.herokuapp.com/webhooks/transloadit"
-    else
-      # In development we cannot receive webhooks, because Transloadit as an
-      # external service cannot reach our localhost.
     end
 
     transloadit_assembly(files, notify_url: notify_url )
