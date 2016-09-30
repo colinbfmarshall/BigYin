@@ -27,7 +27,7 @@ class VideoUploader < Shrine
                               :preset => "flash",
                               :width => 640,
                               :height => 480,
-                              :ffmpeg_stack => "v2.0.0",
+                              :ffmpeg_stack => "v2.2.3",
                               :ffmpeg => { 
                                 t: "00:00:15", 
                                 c: "libx264"
