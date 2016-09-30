@@ -28,9 +28,8 @@ class VideoUploader < Shrine
                               :height => 480,
                               :ffmpeg_stack => "v2.2.3",
                               :ffmpeg => { 
-                                t: "00:00:15", 
-                                c: "libx264"
-                              } )
+                                t: "00:00:15" } 
+                              )
     
     screenshot = original.add_step('extracted_thumbs', '/video/thumbs',
                                     :use => "flash_encoding",
