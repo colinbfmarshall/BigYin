@@ -24,7 +24,6 @@ class VideoUploader < Shrine
 
     video = original.add_step('flash_encoding', '/video/encode',
                               :use => ":original",
-                              :preset => "flash",
                               :width => 640,
                               :height => 480,
                               :ffmpeg_stack => "v2.2.3",
