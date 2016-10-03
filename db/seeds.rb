@@ -6,16 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# user = User.new(
-#   email: 'user1@email.com', 
-#   password: 'password', 
-#   password_confirmation: 'password'
-# )
-# user.skip_confirmation!
-# user.save!
-
-# topic = Topic.create(title: 'US Presidential Election', description: 'The United States presidential election of 2016, scheduled for Tuesday, November 8, 2016, will be the 58th quadrennial U.S. presidential election.', location: 'United States of America', wikipedia: 'https://en.wikipedia.org/wiki/United_States_presidential_election,_2016', deadline: '08.11.2016')
-# topic.save!
+# Topic.create!(title: 'US Presidential Election', description: 'The United States presidential election of 2016, scheduled for Tuesday, November 8, 2016, will be the 58th quadrennial U.S. presidential election.', location: 'United States of America', wikipedia: 'https://en.wikipedia.org/wiki/United_States_presidential_election,_2016', deadline: '08.11.2016')
+# Admin.create!({:email => "admin1@email.com", :password => "admin1@email.com", :password_confirmation => "admin1@email.com" })
+# User.create!({:email => "example1@email.com", :password => "example1@email.com", :password_confirmation => "example1@email.com" })
 
 cities = City.create([
   { name: 'Aberdeen' }, { name: 'Bath' }, { name: 'Belfast' }, { name: 'Birmingham' }, { name: 'Bournemouth' }, { name: 'Bradford' }, { name: 'Brighton' }, { name: 'Bristol' }, 

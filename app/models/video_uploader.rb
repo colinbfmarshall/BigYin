@@ -24,18 +24,18 @@ class VideoUploader < Shrine
 
     video = original.add_step('video_encoding', '/video/encode',
                               :use => ":original",
+                              :preset => "flash",
                               :width => 640,
                               :height => 480,
-                              ffmpeg_stack: "v2.2.3",
-                              ffmpeg: { t: "5" }
+                              ffmpeg_stack: "v2.2.0",
+                              ffmpeg: { t: 5 }
                               )
 
-    # screenshot = original.add_step('thumbnails', '/video/thumbs',
-    #                                 :use => ":original",
-    #                                 :format => "jpg"
-    #                                 )
+    screenshot = original.add_step('thumbnails', '/video/thumbs',
+                                    :use => ":original"
+                                    )
 
-    files = { video: video }
+    files = { video: video, screenshot: screenshot }
   end
 
 end
