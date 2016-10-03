@@ -28,7 +28,7 @@ class VideoUploader < Shrine
                               :height => 480,
                               :ffmpeg_stack => "v2.2.3",
                               :ffmpeg => { 
-                                t: 15 } 
+                                t: 00:00:15 } 
                               )
     
     screenshot = original.add_step('extracted_thumbs', '/video/thumbs',
@@ -37,11 +37,7 @@ class VideoUploader < Shrine
 
     files = { video: video, screenshot: screenshot }
 
-    if ENV["RACK_ENV"] == "production"
-      notify_url = "https://infinite-reaches-64522.herokuapp.com/webhooks/transloadit"
-    end
-
-    transloadit_assembly(files, notify_url: notify_url )
+    transloadit_assembly(files, notify_url: "https://infinite-reaches-64522.herokuapp.com/webhooks/transloadit" )
   end
 
 end
