@@ -23,16 +23,16 @@ class VideoUploader < Shrine
     original = transloadit_file(io)
 
     video = original.add_step('flash_encoding', '/video/encode',
-                              :use => ":original",
-                              :width => 640,
-                              :height => 480,
-                              :ffmpeg_stack => "v2.2.3",
-                              :ffmpeg => { 
-                                t: 15 } 
-                              )
-    
+                              use: ":original",
+                              width: 640,
+                              height: 480,
+                              ffmpeg_stack: "v2.2.3",
+                              ffmpeg: { 
+                                t: 15 
+                              })
+
     screenshot = original.add_step('extracted_thumbs', '/video/thumbs',
-                                    :use => "flash_encoding",
+                                    :use => ":original",
                                     :result => true )
 
     files = { video: video, screenshot: screenshot }
