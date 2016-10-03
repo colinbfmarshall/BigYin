@@ -28,12 +28,15 @@ class VideoUploader < Shrine
                               height: 480,
                               ffmpeg_stack: "v2.2.3",
                               ffmpeg: { 
-                                t: 15 
+                                t: "15" 
                               })
 
-    screenshot = original.add_step('extracted_thumbs', '/video/thumbs',
-                                    :use => ":original",
-                                    :result => true )
+    screenshot = original.add_step('resized_thumbs', '/image/resize',
+                                    :use => "thumbnails",
+                                    :result => true,
+                                    :width => 130,
+                                    :height => 130)
+
 
     files = { video: video, screenshot: screenshot }
 
