@@ -22,25 +22,23 @@ class VideoUploader < Shrine
   def transloadit_process(io, context)
     original = transloadit_file(io)
 
-    video = original.add_step('flash_encoding', '/video/encode',
-                              use: ":original",
-                              width: 640,
-                              height: 480,
+    video = original.add_step('flash_video', '/video/encode',
+                              :use => ":original",
+                              :result => true,
+                              :preset => "flash",
+                              :width => 640,
+                              :height => 480,
                               ffmpeg_stack: "v2.2.3",
                               ffmpeg: { 
-                                t: "15" 
+                                t: 5
                               })
 
-    screenshot = original.add_step('resized_thumbs', '/image/resize',
+    screenshot = original.add_step('thumbnails', '/video/thumbs',
                                     :use => ":original",
-                                    :result => true,
-                                    :width => 130,
-                                    :height => 130)
-
+                                    :format => "jpg"
+                                    )
 
     files = { video: video, screenshot: screenshot }
-
-    transloadit_assembly(files, notify_url: "https://infinite-reaches-64522.herokuapp.com/webhooks/transloadit" )
   end
 
 end
