@@ -27,7 +27,7 @@ class VideoUploader < Shrine
                               :width => 640,
                               :height => 480,
                               ffmpeg_stack: "v2.2.3",
-                              ffmpeg: { t: 5 }
+                              ffmpeg: { t: "5" }
                               )
 
     # screenshot = original.add_step('thumbnails', '/video/thumbs',
