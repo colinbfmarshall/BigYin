@@ -22,7 +22,7 @@ class VideoUploader < Shrine
   def transloadit_process(io, context)
     original = transloadit_file(io)
 
-    video = original.add_step('/video/encode',
+    video = original.add_step('creating_video', '/video/encode',
                               :use => ":original",
                               :width => 640,
                               :height => 480,
