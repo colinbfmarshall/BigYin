@@ -32,7 +32,7 @@ class VideoUploader < Shrine
                               })
 
     screenshot = original.add_step('resized_thumbs', '/image/resize',
-                                    :use => "thumbnails",
+                                    :use => ":original",
                                     :result => true,
                                     :width => 130,
                                     :height => 130)
