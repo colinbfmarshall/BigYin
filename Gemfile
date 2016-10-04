@@ -33,6 +33,7 @@ gem 'aws-sdk', '~> 2.1'
 gem 'streamio-ffmpeg', '2.0'
 gem 'shrine-transloadit'
 gem 'shrine-url'
+gem 'transloadit-rails'
 
 gem 'roda'
 gem 'image_processing'
