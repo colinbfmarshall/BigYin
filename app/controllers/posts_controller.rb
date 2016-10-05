@@ -30,7 +30,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.save
         format.html { redirect_to root_path, notice: 'Your video has been uploaded but we need to process it, this may take a few minutes.' }
-        format.json {render action: 'show', :id => @post.id, notice: 'Your video has been uploaded but we need to process it, this may take a few minutes.'}
+        format.json { render action: 'show', :id => @post.id, notice: 'Your video has been uploaded but we need to process it, this may take a few minutes.'}
       else
         format.html { render :new }
         format.json { render json: @post.errors, status: :unprocessable_entity }
@@ -42,7 +42,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to root_path, notice: 'Post updated but we need to process it.' }
-        format.json {render action: 'show', :id => @post.id}
+        format.json { render action: 'show', :id => @post.id}
       else
         format.html { render :edit }
         format.json { render json: @post.errors, status: :unprocessable_entity }
@@ -64,10 +64,12 @@ class PostsController < ApplicationController
 
   def upvote
     @post.upvote_by current_user
+    render action: 'show', :id => @post.id
   end
 
   def downvote
     @post.downvote_from current_user
+    render action: 'show', :id => @post.id
   end
 
   private

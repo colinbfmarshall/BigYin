@@ -1,14 +1,13 @@
 <div class="container">
   <div class="row">
 
-    <div class="col-md-3">
+    User ID:
+    <%= @profile.user.id %>
+
+
+    <div class="col-md-12">
       <div class="panel" style="border-radius:4px;box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;">
         <div class="panel-body">
-
-          <p>
-            User ID:
-            <%= @profile.user.id %>
-          </p>
 
           <p>
             First name:
@@ -50,32 +49,31 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="col-md-9">
-      <div class="row">
-        <h5>My Videos</h5> 
-        <hr style="margin-top:5px">
-        <% @profile.user.posts.published.each do |post| %>
-          <%= render partial: "/posts/post", object: post, as: 'post' %>    
-        <% end %>
-      </div>
-
-      <div class="row">
-        <h5>Liked Videos</h5>
-        <hr style="margin-top:5px">
-        <% @profile.user.find_liked_items.each do |post| %>
-          <%= render partial: "/posts/post", object: post, as: 'post' %>    
-        <% end %>
-      </div>
-
-      <div class="row">
-        <h5>Disliked Videos</h5>
-        <hr style="margin-top:5px">
-        <% @profile.user.find_disliked_items.each do |post| %>
-          <%= render partial: "/posts/post", object: post, as: 'post' %>    
-        <% end %>
-      </div>
+  <div class="row">
+    <div class="row">
+      <h5>My Videos</h5> 
+      <hr style="margin-top:5px">
+      <% @profile.user.posts.published.each do |post| %>
+        <%= render partial: "/posts/post", object: post, as: 'post' %>    
+      <% end %>
     </div>
 
+    <div class="row">
+      <h5>Liked Videos</h5>
+      <hr style="margin-top:5px">
+      <% @profile.user.find_liked_items.each do |post| %>
+        <%= render partial: "/posts/post", object: post, as: 'post' %>    
+      <% end %>
+    </div>
+
+    <div class="row">
+      <h5>Disliked Videos</h5>
+      <hr style="margin-top:5px">
+      <% @profile.user.find_disliked_items.each do |post| %>
+        <%= render partial: "/posts/post", object: post, as: 'post' %>    
+      <% end %>
+    </div>
   </div>
 </div>
