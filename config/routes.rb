@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   resources :posts do 
     member do
+      get "next", to: "posts#next"
       put "like", to: "posts#upvote"
       put "dislike", to: "posts#downvote"
     end

@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :set_topic, only: [:new, :create, :index, :edit, :update, :upvote, :downvote]
-  before_action :set_post, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
+  before_action :set_topic, only: [:new, :create, :index, :edit, :update, :next, :upvote, :downvote]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :next, :upvote, :downvote]
   before_action :authenticate_user!, only: %i[new create upvote downvote]
   respond_to :html, :xml, :json
 
@@ -58,14 +58,16 @@ class PostsController < ApplicationController
     end
   end
 
+  def next
+    next_post
+  end
+
   def upvote
     @post.upvote_by current_user
-    next_post
   end
 
   def downvote
     @post.downvote_from current_user
-    next_post
   end
 
   private
