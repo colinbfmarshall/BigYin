@@ -7,7 +7,7 @@
           <%= image_tag(post.video_url(:screenshot), style:"width:100%;height:250px;border-radius:2px;") %>
 
           <div class="overlay">
-            <h6><%= post.topic.title %></h6>
+            <h6><%= link_to "#{post.topic.title}", topic_posts_path(post.topic) %></h6>
           </div>
 
         </div>
