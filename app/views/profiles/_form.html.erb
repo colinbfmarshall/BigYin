@@ -6,16 +6,16 @@
     <%= f.input :first_name %>
     <%= f.input :last_name %>
     <%= f.input :age, :collection => Age.all, :include_blank => true %>
-    <%= f.input :location, :collection => City.all, :include_blank => true %>
     <%= f.input :nationality, :collection => Nationality.all, :include_blank => true %>
-    <%= f.input :occupation, :collection => Occupation.all, :include_blank => true %>
+    <% f.input :occupation, :collection => Occupation.all, :include_blank => true %>
+    <% f.input :location, :collection => City.all, :include_blank => true %>
     <% f.input :gender %>
     <% f.input :marital_status %>
     <p>Do you want social media sharing buttons added to your videos?  This will make it easier for others to share your videos online.</p>
-    <%= f.input :share %>
+    <%= f.input :share, label: 'Add social media sharing buttons?' %>
   </div>
-
+  <hr>
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class:'btn btn-flat flat-success btn-rounded btn-block' %>
   </div>
 <% end %>
