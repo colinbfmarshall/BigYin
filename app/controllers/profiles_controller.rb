@@ -2,6 +2,7 @@ class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: %i[new create show edit update destroy]
   before_action :authenticate_admin!, only: %i[index]
+  before_action :protect_resource, only: %i[edit update show destroy]
 
   # GET /profiles
   # GET /profiles.json
@@ -73,6 +74,12 @@ class ProfilesController < ApplicationController
 
     def check_profile
       redirect_to edit_profile_path(@profile), notice: 'Please complete your profile page!' if !@profile.first_name.present?
+    end
+
+    def protect_resource
+      if @profile.user != current_user
+        redirect_to :root, notice: 'You do not have access to that page or resource!'
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

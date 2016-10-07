@@ -1,6 +1,6 @@
 <%= simple_form_for(@profile) do |f| %>
   <%= f.error_notification %>
-
+  <p>Your profile information will not be shared with any other users on our network.</p>
   <div class="form-inputs">
     <%= f.association :user, as: :hidden %>
     <%= f.input :first_name %>
@@ -11,6 +11,7 @@
     <%= f.input :occupation, :collection => Occupation.all, :include_blank => true %>
     <% f.input :gender %>
     <% f.input :marital_status %>
+    <p>Do you want social media sharing buttons added to your videos?  This will make it easier for others to share your videos online.</p>
     <%= f.input :share %>
   </div>
 

@@ -1,54 +1,8 @@
 <div class="container">
   <div class="row">
 
-    User ID:
-    <%= @profile.user.id %>
+    <%= render partial: '/profiles/profile', object: @profile %>
 
-
-    <div class="col-md-12">
-      <div class="panel" style="border-radius:4px;box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;">
-        <div class="panel-body">
-
-          <p>
-            First name:
-            <%= @profile.first_name %>
-          </p>
-
-          <p>
-            Last name:
-            <%= @profile.last_name %>
-          </p>
-
-          <p>
-            Age:
-            <%= Age.find_by(id: @profile.age).name %>
-          </p>
-
-          <p>
-            Location:
-            <%= City.find_by(id: @profile.location).name %>
-          </p>
-
-          <p>
-            Occupation:
-            <%= Occupation.find_by(id: @profile.occupation).name %>
-          </p>
-
-          <p>
-            Share:
-            <%= @profile.share %>
-          </p>
-
-          <p>
-            Videos:
-            <%= @profile.user.posts.count %>
-          </p>
-
-          <%= link_to 'EDIT', edit_profile_path(@profile), class:'btn btn-flat flat-default btn-rounded pull-right' %>
-
-        </div>
-      </div>
-    </div>
   </div>
 
   <div class="row">
