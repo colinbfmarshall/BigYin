@@ -40,7 +40,7 @@
       <h5><%= link_to 'Recent Videos', posts_path %></h5>
       <hr>
       <br>
-      <% Post.all.published.limit(8).each do |post| %>
+      <% Post.all.published.limit(12).each do |post| %>
         <%= render partial: "/posts/post", object: post, as: 'post' %>   
       <% end %>
     </div>
@@ -57,13 +57,12 @@
           <br><br>
           All too often the important debates and issues are dominated by campaign sound bites, polls, celebrities, tabloid journalism or the echo chamber of social media.  
           <br><br>
-          Voters' Minute wants to change that by giving every person a chance to express their opinion on what matters to them.  We don't all have to agree but that doesn't mean we shouldn't listen to those who disagree.
+          Voters' Minute wants to change that by giving everyone a chance to give their opinion on what matters to them.  Who knows, your opinion may change someone else's.
           <br><br>
-          Who knows, you may change someone else's opinion.
+          We don't all agree but that doesn't mean we shouldn't listen, so you don't pick who you listen to next, it's random.
         </p>
       </div>
-      <div class="col-md-offset-1 col-md-3">
-        <br><br><br>
+      <div class="col-md-offset-1 col-md-3" style="padding-top:10%">
           <%= link_to 'SIGN UP', new_user_registration_path, class:'btn btn-flat flat-success btn-rounded btn-block', style:'font-size:1.7em;width:80%;margin-left:auto;margin-right:auto;margin-top:20px' %>
           <%= link_to 'ABOUT', about_path, class:'btn btn-flat flat-default btn-rounded btn-block', style:'font-size:1.7em;width:80%;margin-left:auto;margin-right:auto;margin-top:20px' %>
       </div>
