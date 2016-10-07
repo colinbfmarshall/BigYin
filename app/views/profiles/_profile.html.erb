@@ -6,18 +6,11 @@
         <%= @profile.first_name %> <%= @profile.last_name %>
       </p>
       <p>
+        <%= Nationality.find_by(id: @profile.nationality).name %>
+      </p>
+      <p>
         Age:
         <%= Age.find_by(id: @profile.age).name %>
-      </p>
-
-      <p>
-        Location:
-        <%= City.find_by(id: @profile.location).name %>
-      </p>
-
-      <p>
-        Occupation:
-        <%= Occupation.find_by(id: @profile.occupation).name %>
       </p>
 
       <p>
