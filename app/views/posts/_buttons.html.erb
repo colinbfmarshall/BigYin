@@ -1,6 +1,6 @@
 <div class="btn-group" role="group" style="margin-top:20px">
 
-  <%= link_to root_path, class:'btn btn-flat flat-danger btn-rounded btn-md' do %><i class="fa fa-bell fa-2x" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="REPORT"></i><% end %>
+  <%= mail_to "contact@votersminute.com", subject: "Report Video - Video ID: #{@post.id}", class:'btn btn-flat flat-danger btn-rounded btn-md' do %><i class="fa fa-bell fa-2x" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="REPORT"></i><% end %>
 
   <%= link_to dislike_post_path(@post), method: :put, class:"btn btn-flat flat-warning btn-rounded btn-md", "type" => "submit", "title" => "Disagree"  do %>
     <i class="fa fa-thumbs-down fa-2x" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="DISAGREE"></i>
