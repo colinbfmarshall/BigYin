@@ -5,7 +5,7 @@ class VideoUploader < Shrine
 
   def transloadit_process(io, context)
     original = transloadit_file(io)
-    video = original.add_step("encoding", "/video/encode", preset: "iphone-high", width: 640, height: 480, ffmpeg: { t: 20})
+    video = original.add_step("encoding", "/video/encode", preset: "iphone-high", width: 640, height: 480, ffmpeg: { t: 60})
     screenshot = original.add_step("thumbnail", "/video/thumbs", count: 1)
     files = {video: video, screenshot: screenshot}
     if ENV["RACK_ENV"] == "production"
