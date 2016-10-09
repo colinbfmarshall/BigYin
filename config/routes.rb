@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :admins
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'
@@ -30,4 +31,9 @@ Rails.application.routes.draw do
   get 'welcome', :to => 'welcome#index'
   get 'about', :to => 'welcome#about'
   get 'conditions', :to => 'welcome#conditions'
+
+  get "/404", :to => "errors#not_found"
+  get "/422", :to => "errors#unacceptable"
+  get "/500", :to => "errors#internal_server_error"
+
 end

@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">  
+    <div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h4>Sorry but that page wasn't found!</h4>
+          <p>Why not go <%= link_to 'back', :back %> and try again.</p>
+
+          <div class="collapse collapse" id="collapseExample">
+            <div class="panel-body" style="text-align:center">
+              <img src="http://www.quickmeme.com/img/b3/b3a10abef396f68423bc6a60d2bbf40cb78298afa309f51c76c94130124b681c.jpg" height="90%" width="90%">
+            </div>
+          </div>
+
+          <button class="btn btn-default btn-xs pull-right" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            Show
+          </button>
+          <br>
+          <p style="font-size:.8em">Still having problems? Drop us an <%= mail_to "contact@votersminute.co.uk", 'email' %>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
