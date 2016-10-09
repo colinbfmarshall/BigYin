@@ -1,5 +1,36 @@
-<p>Welcome <%= @email %>!</p>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta property="og:title" content="*|MC:SUBJECT|*">
+  <title>*|MC:SUBJECT|*</title>
+  <style type="text/css">
+    p {
+      font-family: 'Montserrat', sans-serif;
+      color: #2c3e50;
+    }
+    a {
+      font-family: 'Montserrat', sans-serif;
+    }
 
-<p>You can confirm your account email through the link below:</p>
+  </style>
+</head>
+<link href="https://fonts.googleapis.com/css?family=Rancho" rel="stylesheet" type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<body>
+  <div>
+    <p>Hello,</p>
+    <p>Thanks for registering with <span style="font-family: 'Rancho', cursive;font-size:1.2em;color:#FF534B;font-weight:600">VotersMinute</span>, we really appreciate your support.</p>
+    <p>Please confirm your email address by clicking the link below:</p>
+    <%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %>
+    <p>We're always open to feedback, so please get in touch at <%= mail_to "contact@votersminute.co.uk" %> or <a href="https://twitter.com/VotersMinute">@VotersMinute</a>.</p>
+    <p>Thanks again, 
+    <br/><br/>
+    <span style="font-family: 'Rancho', cursive;font-size:1.2em;font-weight:600"> 
+      Voters'<span style="color:#FF534B;"> Minute</span> Team
+    </span>
+    </p>
+  </div>
+</body>
+</html>
