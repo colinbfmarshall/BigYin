@@ -3,17 +3,8 @@
 
     <div class="col-sm-12">
       <% if @topic.present? %>
-        <div class="panel">
-          <div class="panel-body">
-            <div class="col-md-10 col-sm-8" style="border-radius:4px;height:88px;background-color:white">
-              <h3><%= @topic.title %></h3>
-              <p><strong style="font-size:1.3em"><%= @topic.location %> | <%= @topic.deadline.strftime("%d %B %Y") %></strong></p>
-            </div>
-            <div class="col-md-2 col-sm-2" style="height:88px;padding:15px;background-color:white">
-              <%= image_tag(@topic.image, style:"width:100px;height:60px;border-radius:2px;border:1px solid #E9E9E9") %>
-            </div>
-          </div>
-        </div>
+
+      <%= render partial: '/topics/topic', object: @topic, as: 'topic' %>
 
       <% end %>
     </div>
@@ -25,7 +16,7 @@
 
       <div class="item <%= post.topic.id %>">
 
-        <%= render partial: "/posts/post", object: post, as: 'post' %>   
+        <%= render partial: "/posts/post", object: post, as: 'post' %>
       
       </div>
 

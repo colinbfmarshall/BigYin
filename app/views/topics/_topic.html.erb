@@ -1,7 +1,13 @@
   <div class="panel" style="border-radius:4px;box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;">
     <div class="panel-heading">
       <h3 class="pull-left"><%= topic.title %></h3>
+
+      <% if topic.deadline.future? %>
       <h5 style="margin-top:25px" class="pull-right"><%= topic.deadline.strftime("%d %B %Y") %></h5>
+      <% else %>
+      <h5 style="margin-top:25px" class="pull-right">No date set</h5>
+      <% end %>
+
     </div>
     <div class="panel-body">
       <%= image_tag("#{topic.image}", style:"width:100%;") %>
