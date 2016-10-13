@@ -10,39 +10,31 @@
 # Admin.create!({:email => "admin1@email.com", :password => "admin1@email.com", :password_confirmation => "admin1@email.com" })
 # User.create!({:email => "example1@email.com", :password => "example1@email.com", :password_confirmation => "example1@email.com" })
 
-cities = City.create([
-  { name: 'Aberdeen' }, { name: 'Bath' }, { name: 'Belfast' }, { name: 'Birmingham' }, { name: 'Bournemouth' }, { name: 'Bradford' }, { name: 'Brighton' }, { name: 'Bristol' }, 
-  { name: 'Cambridge' }, { name: 'Cardiff' }, { name: 'Chester' }, { name: 'Coventry and Warks' }, { name: 'Derby' }, { name: 'Derry' }, { name: 'Dundee' }, 
-  { name: 'Edinburgh' }, { name: 'Essex' }, { name: 'Exeter' }, { name: 'Falkirk and Stirling' }, { name: 'Gateshead' }, { name: 'Glasgow' }, { name: 'Gloucestershire' }, 
-  { name: 'Hull' }, { name: 'Ipswich' }, { name: 'Jersey' }, { name: 'Leeds' }, { name: 'Leicester' }, { name: 'Lincolnshire' }, { name: 'Liverpool' }, { name: 'London' }, 
-  { name: 'Kent' }, { name: 'Manchester' }, { name: 'Milton Keynes' }, { name: 'Newcastle' }, { name: 'Northampton' }, { name: 'Norwich' }, { name: 'Nottingham' }, 
-  { name: 'Oxford' }, { name: 'Peterborough' }, { name: 'Plymouth' }, { name: 'Portsmouth' }, { name: 'Lancashire' }, { name: 'Reading' }, 
-  { name: 'Sheffield' }, { name: 'Southampton' }, { name: 'Stoke-on-Trent' }, { name: 'Surrey' }, { name: 'Swansea' }, { name: 'Swindon' }, { name: 'Teesside' }, 
-  { name: 'Watford' }, { name: 'Wolverhampton' }, { name: 'Worcestershire' }, { name: 'York' }
-])
+# cities = City.create([
+#   { name: 'Aberdeen' }, { name: 'Bath' }, { name: 'Belfast' }, { name: 'Birmingham' }, { name: 'Bournemouth' }, { name: 'Bradford' }, { name: 'Brighton' }, { name: 'Bristol' }, 
+#   { name: 'Cambridge' }, { name: 'Cardiff' }, { name: 'Chester' }, { name: 'Coventry and Warks' }, { name: 'Derby' }, { name: 'Derry' }, { name: 'Dundee' }, 
+#   { name: 'Edinburgh' }, { name: 'Essex' }, { name: 'Exeter' }, { name: 'Falkirk and Stirling' }, { name: 'Gateshead' }, { name: 'Glasgow' }, { name: 'Gloucestershire' }, 
+#   { name: 'Hull' }, { name: 'Ipswich' }, { name: 'Jersey' }, { name: 'Leeds' }, { name: 'Leicester' }, { name: 'Lincolnshire' }, { name: 'Liverpool' }, { name: 'London' }, 
+#   { name: 'Kent' }, { name: 'Manchester' }, { name: 'Milton Keynes' }, { name: 'Newcastle' }, { name: 'Northampton' }, { name: 'Norwich' }, { name: 'Nottingham' }, 
+#   { name: 'Oxford' }, { name: 'Peterborough' }, { name: 'Plymouth' }, { name: 'Portsmouth' }, { name: 'Lancashire' }, { name: 'Reading' }, 
+#   { name: 'Sheffield' }, { name: 'Southampton' }, { name: 'Stoke-on-Trent' }, { name: 'Surrey' }, { name: 'Swansea' }, { name: 'Swindon' }, { name: 'Teesside' }, 
+#   { name: 'Watford' }, { name: 'Wolverhampton' }, { name: 'Worcestershire' }, { name: 'York' }
+# ])
 
+# occupations = Occupation.create([
+#   { name: 'Accountancy' }, { name: 'Administration' }, { name: 'Advertising' }, { name: 'Aerospace' }, { name: 'Automotive' }, 
+#   { name: 'Banking' }, { name: 'Call Centre' }, { name: 'Catering' }, { name: 'Charity' }, { name: 'Civil Service' }, { name: 'Construction' }, { name: 'Creative' }, { name: 'Customer Services' }, 
+#   { name: 'Digital' }, { name: 'Education' }, { name: 'Engineering' }, { name: 'Finance' }, { name: 'FMCG' }, 
+#   { name: 'Healthcare' }, { name: 'Hospitality' }, { name: 'HR' }, { name: 'Insurance' }, { name: 'IT' }, 
+#   { name: 'Legal' }, { name: 'Leisure' }, { name: 'Logistics' }, { name: 'Management Consultancy' }, { name: 'Manufacturing' }, { name: 'Marketing' }, { name: 'Media' }, 
+#   { name: 'Nursing' }, { name: 'Oil and Gas' }, { name: 'PA' }, { name: 'Pharmaceutical' }, { name: 'PR' }, { name: 'Property' }, { name: 'Public Sector' }, 
+#   { name: 'Recruitment' }, { name: 'Renewable Energy' }, { name: 'Retail' }, { name: 'Sales' }, { name: 'Science' }, { name: 'Secretarial' }, { name: 'Social Work' }, 
+#   { name: 'Teaching' }, { name: 'Telecoms' }, { name: 'Temporary' }, { name: 'Tourism' }, { name: 'Transport' }, { name: 'Travel' }, { name: 'Utilities' }, { name: 'Wholesale ' }, { name: 'Other' }
+# ])
 
-ages = Age.create([
-  { name: 'Under 18'},
-  { name: '18 - 24'},
-  { name: '25 - 34'},
-  { name: '35 - 44'},
-  { name: '45 - 54'},
-  { name: '55 - 64'},
-  { name: '65 - 74'},
-  { name: '75 or Above'},
-])
-
-occupations = Occupation.create([
-  { name: 'Accountancy' }, { name: 'Administration' }, { name: 'Advertising' }, { name: 'Aerospace' }, { name: 'Automotive' }, 
-  { name: 'Banking' }, { name: 'Call Centre' }, { name: 'Catering' }, { name: 'Charity' }, { name: 'Civil Service' }, { name: 'Construction' }, { name: 'Creative' }, { name: 'Customer Services' }, 
-  { name: 'Digital' }, { name: 'Education' }, { name: 'Engineering' }, { name: 'Finance' }, { name: 'FMCG' }, 
-  { name: 'Healthcare' }, { name: 'Hospitality' }, { name: 'HR' }, { name: 'Insurance' }, { name: 'IT' }, 
-  { name: 'Legal' }, { name: 'Leisure' }, { name: 'Logistics' }, { name: 'Management Consultancy' }, { name: 'Manufacturing' }, { name: 'Marketing' }, { name: 'Media' }, 
-  { name: 'Nursing' }, { name: 'Oil and Gas' }, { name: 'PA' }, { name: 'Pharmaceutical' }, { name: 'PR' }, { name: 'Property' }, { name: 'Public Sector' }, 
-  { name: 'Recruitment' }, { name: 'Renewable Energy' }, { name: 'Retail' }, { name: 'Sales' }, { name: 'Science' }, { name: 'Secretarial' }, { name: 'Social Work' }, 
-  { name: 'Teaching' }, { name: 'Telecoms' }, { name: 'Temporary' }, { name: 'Tourism' }, { name: 'Transport' }, { name: 'Travel' }, { name: 'Utilities' }, { name: 'Wholesale ' }, { name: 'Other' }
-])
+['Under 18', '18 - 24','25 - 34', '35 - 44', '45 - 54', '55 - 64', '65 - 74', '75 or Above'].each do |age|
+  Age.find_or_create_by({name: age})
+end
 
 ['Afghan', 'Albanian', 'Algerian', 'American', 'Andorran', 'Angolan', 'Antiguans', 'Argentinean', 'Armenian', 'Australian', 'Azerbaijani', 
   'Bahamian', 'Bahraini', 'Bangladeshi', 'Barbadian', 'Barbudans', 'Batswana', 'Belarusian', 'Belgian', 'Belizean', 'Beninese', 'Bhutanese', 'Bolivian', 'Bosnian', 'Brazilian', 'British', 'Bruneian', 'Bulgarian', 'Burkinabe', 'Burmese', 'Burundian', 
@@ -62,7 +54,7 @@ occupations = Occupation.create([
   'Pakistani', 'Palauan', 'Panamanian', 'Papua New Guinean', 'Paraguayan', 'Peruvian', 'Polish', 'Portuguese', 
   'Qatari', 
   'Romanian', 'Russian', 'Rwandan', 
-  'Saint Lucian', 'Salvadoran', 'Samoan', 'San Marinese', 'Sao Tomean', 'Saudi', 'Senegalese', 'Serbian', 'Seychellois', 'Sierra Leonean', 'Singaporean', 'Slovakian', 'Slovenian', 'Solomon Islander', 'Somali', 'South African', 'South Korean', 'Spanish', 'Sri Lankan', 'Sudanese', 'Surinamer', 'Swazi', 'Swedish', 'Swiss', 'Syrian', 
+  'Saint Lucian', 'Salvadoran', 'Samoan', 'San Marinese', 'Sao Tomean', 'Saudi', 'Scottish', 'Senegalese', 'Serbian', 'Seychellois', 'Sierra Leonean', 'Singaporean', 'Slovakian', 'Slovenian', 'Solomon Islander', 'Somali', 'South African', 'South Korean', 'Spanish', 'Sri Lankan', 'Sudanese', 'Surinamer', 'Swazi', 'Swedish', 'Swiss', 'Syrian', 
   'Taiwanese', 'Tajik', 'Tanzanian', 'Thai', 'Togolese', 'Tongan', 'Trinidadian', 'Tobagonian', 'Tunisian', 'Turkish', 'Tuvaluan', 
   'Ugandan', 'Ukrainian', 'Uruguayan', 'Uzbekistani', 
   'Venezuelan', 'Vietnamese', 

@@ -14,8 +14,7 @@
               <th>Last Name</th>
               <th>Email</th>
               <th>Age</th>
-              <th>Location</th>
-              <th>Occupation</th>
+              <th>Nationality</th>
               <th>Share</th>
               <th>Videos</th>
               <th colspan="2"></th>
@@ -30,8 +29,7 @@
                 <td><%= profile.last_name %></td>
                 <td><%= profile.user.email %></td>
                 <td><%= Age.find_by(id: profile.age).name %></td>
-                <td><%= City.find_by(id: profile.location).name %></td>
-                <td><%= Occupation.find_by(id: profile.occupation).name %></td>
+                <td><%= Nationality.find_by(id: profile.nationality).name %></td>
                 <td><%= profile.share %></td>
                 <td><%= profile.user.posts.count %></td>
                 <td><strong><%= link_to 'show', edit_profile_path(profile) %></strong></td>
