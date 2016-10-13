@@ -1,25 +1,24 @@
-  <div class="panel" style="border-radius:4px;box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;">
-    <div class="panel-heading">
-      <h3 class="pull-left"><%= topic.title %></h3>
+<div class="panel" style="border-radius:4px;box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important">
+  <div class="panel-body center">
+    <div class="col-sm-8">
+      <h3><%= topic.title %></h3>  
 
       <% if topic.deadline.future? %>
-      <h5 style="margin-top:25px" class="pull-right"><%= topic.deadline.strftime("%d %B %Y") %></h5>
+      <h5 style="color:#95a5a6"><%= topic.deadline.strftime("%d %B %Y") %></h5>
       <% else %>
-      <h5 style="margin-top:25px" class="pull-right">No date set</h5>
+      <h5 style="color:#95a5a6">No date set</h5>
       <% end %>
 
-    </div>
-    <div class="panel-body">
-      <%= image_tag("#{topic.image}", style:"width:100%;") %>
-      <hr>
+      <hr style="margin:5px">
       <%= link_to "#{topic.wikipedia}", target: "blank" do %>
         <p><%= simple_format(topic.description) %></p>
       <% end %>
-      <hr>
-      <div class="col-sm-8 col-sm-offset-2 center">
-        <%= link_to 'ADD VIDEO', new_topic_post_path(topic), class:'btn btn-flat flat-success btn-rounded btn-block' %>
-        <%= link_to 'BROWSE VIDEOS', topic_posts_path(topic), class:'btn btn-flat flat-info btn-rounded btn-block' %>
-        <%= link_to 'Edit', edit_topic_path(topic), class:'btn btn-flat flat-inverse btn-rounded btn-block' if current_admin.present? %>
-      </div>
+
+      <%= link_to 'Edit', edit_topic_path(topic), class:'btn btn-flat flat-inverse btn-rounded btn-md' if current_admin.present? %>
+
     </div>
-  </div>
+    <div class="col-sm-4">
+      <%= image_tag("#{topic.image}", style:"height:60%;width:100%;border-radius:4px;opacity:0.7;-moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);-webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);box-shadow: 1px 2px 3px rgba(0,0,0,.5);") %>
+    </div>
+  </div>    
+</div>
