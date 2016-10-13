@@ -2,7 +2,6 @@
   <div class="panel-body center">
     <div class="col-sm-8">
       <h3><%= topic.title %></h3>  
-
       <% if topic.deadline.future? %>
       <h5 style="color:#95a5a6"><%= topic.deadline.strftime("%d %B %Y") %></h5>
       <% else %>
@@ -15,10 +14,11 @@
       <% end %>
 
       <%= link_to 'Edit', edit_topic_path(topic), class:'btn btn-flat flat-inverse btn-rounded btn-md' if current_admin.present? %>
-
     </div>
     <div class="col-sm-4">
-      <%= image_tag("#{topic.image}", style:"height:60%;width:100%;border-radius:4px;opacity:0.7;-moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);-webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);box-shadow: 1px 2px 3px rgba(0,0,0,.5);") %>
+      <%= link_to topic_posts_path(topic) do %>
+        <%= image_tag("#{topic.image}", style:"height:60%;width:100%;border-radius:4px;opacity:0.7;-moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);-webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);box-shadow: 1px 2px 3px rgba(0,0,0,.5);") %>
+      <% end %>
     </div>
   </div>    
 </div>
