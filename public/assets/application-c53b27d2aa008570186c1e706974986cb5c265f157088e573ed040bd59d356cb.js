@@ -15990,6 +15990,75 @@ var widget = $.widget;
 
 }).call(this);
 (function() {
+  this.GoogleAnalytics = (function() {
+    function GoogleAnalytics() {}
+
+    GoogleAnalytics.load = function() {
+      var firstScript, ga;
+      window._gaq = [];
+      window._gaq.push(["_setAccount", GoogleAnalytics.analyticsId()]);
+      ga = document.createElement("script");
+      ga.type = "text/javascript";
+      ga.async = true;
+      ga.src = ("https:" === document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
+      firstScript = document.getElementsByTagName("script")[0];
+      firstScript.parentNode.insertBefore(ga, firstScript);
+      if (typeof Turbolinks !== 'undefined' && Turbolinks.supported) {
+        return document.addEventListener("page:change", (function() {
+          return GoogleAnalytics.trackPageview();
+        }), true);
+      } else {
+        return GoogleAnalytics.trackPageview();
+      }
+    };
+
+    GoogleAnalytics.trackPageview = function(url) {
+      if (!GoogleAnalytics.isLocalRequest()) {
+        if (url) {
+          window._gaq.push(["_trackPageview", url]);
+        } else {
+          window._gaq.push(["_trackPageview"]);
+        }
+        return window._gaq.push(["_trackPageLoadTime"]);
+      }
+    };
+
+    GoogleAnalytics.isLocalRequest = function() {
+      return GoogleAnalytics.documentDomainIncludes("local");
+    };
+
+    GoogleAnalytics.documentDomainIncludes = function(str) {
+      return document.domain.indexOf(str) !== -1;
+    };
+
+    GoogleAnalytics.analyticsId = function() {
+      return 'UA-84543969-1';
+    };
+
+    return GoogleAnalytics;
+
+  })();
+
+  GoogleAnalytics.load();
+
+}).call(this);
+(function() {
+
+
+}).call(this);
+(function() {
+
+
+}).call(this);
+(function() {
+
+
+}).call(this);
+(function() {
+
+
+}).call(this);
+(function() {
 
 
 }).call(this);
@@ -16012,10 +16081,15 @@ var widget = $.widget;
 
 
 
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
+
 $(function() {
   $('[type=file]').fileupload({
     add: function(e, data) {
-      data.progressBar = $('<div class="progress" style="width: 300px"><div class="progress-bar"></div></div>').insertAfter(".form-group-uploader");
+      data.progressBar = $('<div class="progress" style="width:100%"><div class="progress-bar"></div></div>').insertAfter(".form-group-uploader");
       var options = {
         extension: data.files[0].name.match(/(\.\w+)?$/)[0], // set extension
         _: Date.now(),                                       // prevent caching

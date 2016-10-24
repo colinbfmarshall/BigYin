@@ -14834,10 +14834,10 @@ address {
 
 /* line 30, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/image-hover.scss */
 .hovereffect h6 {
-  color: #fff;
+  color: #2c3e50;
   text-align: center;
   position: relative;
-  background: rgba(0, 0, 0, 0.6);
+  background: white;
   -webkit-transform: translatey(-100px);
   -ms-transform: translatey(-100px);
   transform: translatey(-100px);
@@ -14918,7 +14918,7 @@ p strong {
   background-color: #777777;
   background: no-repeat center center;
   background-attachment: scroll;
-  background: url("homepage.png");
+  background: url("homepage_2.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -15018,6 +15018,48 @@ p strong {
     font-size: 30px;
   }
 }
+/* line 108, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
+.corner-ribbon {
+  width: 200px;
+  background: #e43;
+  position: absolute;
+  top: 25px;
+  left: -50px;
+  text-align: center;
+  line-height: 40px;
+  letter-spacing: 1px;
+  color: #f0f0f0;
+  transform: rotate(-45deg);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5em;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  -webkit-transform: rotate(-45deg);
+}
+
+/* line 126, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
+.corner-ribbon.sticky {
+  position: fixed;
+}
+
+/* line 130, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
+.corner-ribbon.shadow {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+/* line 134, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
+.corner-ribbon.top-left {
+  top: 25px;
+  left: -50px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+/* line 141, /Users/colinmarshall/code/rails/video/BigYin/app/assets/stylesheets/welcome.scss */
+.corner-ribbon.blue {
+  background: #39d;
+}
+
 /*
  * jQuery File Upload UI Plugin CSS
  * https://github.com/blueimp/jQuery-File-Upload
