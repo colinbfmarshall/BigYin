@@ -53,13 +53,15 @@
       <div class="col-md-8">
         <h1 style="color:white">Why?</h1>
         <p style="color:white;letter-spacing:1px;line-height:120%;font-size:1.3em">
-          Because opinions matters.
+          Politics is a battle of ideas.
           <br><br>
-          All too often the important debates and issues are dominated by campaign sound bites, polls, celebrities, tabloid journalism or the echo chamber of social media.  
+          That's how democracy was designed.
           <br><br>
-          Voters' Minute wants to change that by giving everyone a chance to give their opinion on what matters to them.  Who knows, your opinion may change someone else's.
+          But we've become so secure in our own bubbles that we never challenge our own political outlook or assumptions.
           <br><br>
-          We don't all agree but that doesn't mean we shouldn't listen, so you don't pick who you listen to next, it's random.
+          Voters' Minute wants to change that by giving everyone a chance to give their opinion on what matters to them.  Who knows, your opinion may make the difference.
+          <br><br>
+          On Voters' Minute you don't pick who you listen to, it's random.  We won't all agree but that doesn't mean we shouldn't listen.
         </p>
       </div>
       <div class="col-md-offset-1 col-md-3" style="padding-top:10%">
@@ -94,7 +96,7 @@
         <p style="letter-spacing:1px;line-height:120%;font-size:1.4em">If there's something you want to debate or learn more about.</p>
         <p style="letter-spacing:1px;line-height:120%;font-size:1.4em">Then let us know and we'll add the topic to the website. </p>
         <br>
-        <%= link_to 'ADD TOPIC', topics_path, class:'btn btn-flat flat-inverse btn-rounded btn-block', style:'width:60%;margin-left:auto;margin-right:auto' %>
+        <%= mail_to "contact@votersminute.com", "ADD TOPIC", subject: "Topic Request:", class:'btn btn-flat flat-inverse btn-rounded btn-block', style:'width:60%;margin-left:auto;margin-right:auto' %>
       </div>
     </div>
   </div>
