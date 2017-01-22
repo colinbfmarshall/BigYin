@@ -1,6 +1,8 @@
 require "shrine"
 require "shrine/storage/s3"
 require "shrine/storage/url"
+require "shrine/storage/file_system"
+require "image_processing/mini_magick"
 
 s3_options = {
   access_key_id:     ENV.fetch("S3_ACCESS_KEY_ID"),

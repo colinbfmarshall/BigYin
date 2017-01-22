@@ -8,5 +8,5 @@ class Profile < ActiveRecord::Base
   # validates_presence_of :occupation
   # validates_presence_of :gender
   # validates_presence_of :marital_status
-
+  
 end

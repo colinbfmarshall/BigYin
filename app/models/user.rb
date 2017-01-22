@@ -3,10 +3,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :profile
+  has_many :topics
   has_many :videos
   has_many :posts
 
   acts_as_voter
-
 
 end

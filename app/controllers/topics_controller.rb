@@ -1,6 +1,8 @@
 class TopicsController < ApplicationController
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_admin!, only: %i[new create]
+  # before_action :authenticate_user!, only: %i[new create update]
+  # before_action :authenticate_admin!, only: %i[new create update]
+  before_filter :authenticate_any!, only: %i[new create update]
 
   def index
     @topics = Topic.all
@@ -18,6 +20,7 @@ class TopicsController < ApplicationController
 
   def create
     @topic = Topic.new(topic_params)
+    @topic.user = current_user
     respond_to do |format|
       if @topic.save
         format.html { redirect_to @topic, notice: 'Topic was successfully created.' }
@@ -55,6 +58,6 @@ class TopicsController < ApplicationController
     end
 
     def topic_params
-      params.require(:topic).permit(:title, :description, :location, :wikipedia, :deadline, :active, :image)
+      params.require(:topic).permit(:title, :description, :location, :wikipedia, :image, :remove_image, :deadline, :active)
     end
 end

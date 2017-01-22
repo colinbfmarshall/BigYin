@@ -26,10 +26,11 @@ gem 'font-awesome-sass'
 
 gem 'devise'
 gem 'simple_form'
+gem 'country_select'
 gem 'jquery-fileupload-rails'
 
 gem 'shrine'
-gem 'aws-sdk', '~> 2.1'
+gem 'aws-sdk', '~> 2.3.0'
 gem 'streamio-ffmpeg', '2.0'
 gem 'shrine-transloadit'
 gem 'shrine-url'

@@ -1,18 +1,34 @@
-<%= simple_form_for(@topic) do |f| %>
+<%= simple_form_for @topic do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <div class="form-group">
+   
     <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :location %>
-    <%= f.input :wikipedia %>
-    <%= f.input :image %>
-    <%= f.input :deadline %>
-    <%= f.input :active %>
-  </div>
+    
+    <div class="pull-right"><span id="body-count">250</span> characters left</div>
+    
+    <%= f.input :description, input_html: { :id => "body-field", :cols => 5, :rows => 3 } %>
+    
+    <%= f.input :location, as: :country %>
+    
+    <%# f.input :image, as: :file, :input_html => {:onchange => "previewFile()"} %>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+<!--     <div style="text-align:center">
+      <img height="100%" width="60%" alt="Image preview...">
+    </div>
+ -->
   </div>
   <hr>
+
+  <%= f.submit :submit, class:'btn btn-flat flat-inverse btn-rounded btn-block' %>
+
 <% end %>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $("#body-field").on("keyup", function(){
+    var length = $(this).val().length;
+    $("#body-count").html(250 - length);
+  });
+});
+</script>

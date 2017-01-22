@@ -72,6 +72,7 @@ class PostsController < ApplicationController
     render action: 'show', :id => @post.id
   end
 
+
   private
 
     def set_topic

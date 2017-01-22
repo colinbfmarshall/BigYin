@@ -1,24 +1,14 @@
 <div class="col-sm-6 col-sm-offset-3 center">
   <div class="panel" style="border-radius:4px;box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;">
     <div class="panel-body">
+    <%# image_tag @profile.avatar.url(:medium) %>
+      <h4><%= @profile.first_name %> <%= @profile.last_name %></h4>
 
-      <p>
-        <%= @profile.first_name %> <%= @profile.last_name %>
-      </p>
-      <p>
-        <%= Nationality.find_by(id: @profile.nationality).name %>
-      </p>
-      <p>
-        Age:
-        <%= Age.find_by(id: @profile.age).name %>
-      </p>
+      <h6><%= Nationality.find_by(id: @profile.nationality).name %></h6>
+      <h6><%= Age.find_by(id: @profile.age).name %></h6>
+      <h6>Videos: <%= @profile.user.posts.count %></h6>
 
-      <p>
-        Videos:
-        <%= @profile.user.posts.count %>
-      </p>
-
-      <%= link_to 'EDIT', edit_profile_path(@profile), class:'btn btn-flat flat-default btn-rounded pull-right' %>
+      <%= link_to 'EDIT', edit_profile_path(@profile), class:'btn btn-sm btn-flat flat-default btn-rounded pull-right' %>
 
     </div>
   </div>

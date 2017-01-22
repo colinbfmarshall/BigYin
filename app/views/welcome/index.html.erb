@@ -92,11 +92,11 @@
   <div class="container">
     <div class="row center"> 
       <div class="col-md-offset-2 col-md-8">
-        <h1>Request Topic or Issue</h1>
-        <p style="letter-spacing:1px;line-height:120%;font-size:1.4em">If there's something you want to debate or learn more about.</p>
-        <p style="letter-spacing:1px;line-height:120%;font-size:1.4em">Then let us know and we'll add the topic to the website. </p>
+        <h1>Start a new debate</h1>
+        <p style="letter-spacing:1px;line-height:120%;font-size:1.4em">If there's an something you want to debate or learn more about.</p>
+        <p style="letter-spacing:1px;line-height:120%;font-size:1.4em">Then create a new topic and start the debate. </p>
         <br>
-        <%= mail_to "contact@votersminute.com", "ADD TOPIC", subject: "Topic Request:", class:'btn btn-flat flat-inverse btn-rounded btn-block', style:'width:60%;margin-left:auto;margin-right:auto' %>
+        <%= link_to 'ADD NEW TOPIC', new_topic_path, class:'btn btn-flat flat-inverse btn-rounded btn-block', style:'width:60%;margin-left:auto;margin-right:auto' %>
       </div>
     </div>
   </div>

@@ -105,16 +105,18 @@ ActiveRecord::Schema.define(version: 20160920092818) do
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
 
   create_table "topics", force: :cascade do |t|
+    t.integer  "user_id"
     t.string   "title"
     t.text     "description"
     t.string   "location"
-    t.string   "wikipedia"
-    t.string   "image"
+    t.text     "image_data"
     t.date     "deadline"
     t.boolean  "active",      default: true
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end
+
+  add_index "topics", ["user_id"], name: "index_topics_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -159,4 +161,5 @@ ActiveRecord::Schema.define(version: 20160920092818) do
   add_foreign_key "posts", "topics"
   add_foreign_key "posts", "users"
   add_foreign_key "profiles", "users"
+  add_foreign_key "topics", "users"
 end

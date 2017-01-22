@@ -1,23 +1,47 @@
 <div class="container">
+  <div class="row"> 
+    <div class="col-md-8 col-md-offset-2">
 
-  <p id="notice"><%= notice %></p>  
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3>Topics</h3>
+        </div>
+        <div class="panel-body">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Location</th>
+                <th>Videos</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @topics.each_with_index do |topic, index| %>
+                <%= link_to topic_posts_path(topic) do %>
+                <tr>
+                  <td><%= index + 1 %></td>
+                  <td><%= topic.title %></td>
+                  <td><%= topic.location %></td>
+                  <td><%= topic.posts.count %></td>
+                  <td><%= link_to 'View', topic_posts_path(topic) %></td>
+                </tr>
+                <% end %>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
-  <div class="row">
-
-    <% @topics.each do |topic| %>
-      <%= link_to topic_posts_path(topic) do %>
-        <%= render partial: '/topics/topic', object: topic %>
-      <% end %>
-    <% end %>
-  
+    </div>
   </div>
 
-
 <br>
-  <% if current_admin.present? %>
+  <% if current_user.present? %>
   <div class="row">
     <div class="col-md-4 col-md-offset-4">
-      <%= link_to 'NEW TOPIC', new_topic_path, class:'btn btn-flat flat-inverse btn-rounded btn-block' %>
+      <%= link_to 'ADD NEW TOPIC', new_topic_path, class:'btn btn-flat flat-inverse btn-rounded btn-block' %>
     </div>
   </div>
 <% end %>

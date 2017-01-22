@@ -1,16 +1,25 @@
-<%= simple_form_for(@profile) do |f| %>
+<%= simple_form_for @profile, html: { multipart: true } do |f| %>
   <%= f.error_notification %>
   <p>Your profile information will not be shared with any other users on our network.</p>
-  <div class="form-inputs">
+  <div class="form-group">
     <%= f.association :user, as: :hidden %>
     <%= f.input :first_name %>
     <%= f.input :last_name %>
     <%= f.input :age, :collection => Age.all, :include_blank => true %>
     <%= f.input :nationality, :collection => Nationality.all, :include_blank => true %>
-    <% f.input :occupation, :collection => Occupation.all, :include_blank => true %>
-    <% f.input :location, :collection => City.all, :include_blank => true %>
-    <% f.input :gender %>
-    <% f.input :marital_status %>
+    
+    <%= f.input :avatar, as: :file, :input_html => {:onchange => "previewFile()"} %>
+    <div style="text-align:center">
+      <img height="100%" width="60%" alt="Image preview...">
+    </div>
+    <br>
+
+
+    <%# f.input :occupation, :collection => Occupation.all, :include_blank => true %>
+    <%# f.input :location, :collection => City.all, :include_blank => true %>
+    <%# f.input :gender %>
+    <%# f.input :marital_status %>
+
     <p>Do you want social media sharing buttons added to your videos?  This will make it easier for others to share your videos online.</p>
     <%= f.input :share, label: 'Add social media sharing buttons?' %>
   </div>
