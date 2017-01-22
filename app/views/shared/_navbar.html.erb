@@ -28,6 +28,7 @@
               <li><%= link_to 'Profile', profile_path(current_user.profile) %></li>
               <li><%= link_to 'Add Video', topics_path %></li>
               <li><%= link_to 'Settings', edit_user_registration_path %></li>
+              <li role="separator" class="divider"></li>
               <li><%= link_to destroy_user_session_path, method: :delete do %>Sign Out<% end %></li>
             </ul>
           </li> 
@@ -36,6 +37,8 @@
           <li><%= link_to 'USERS', profiles_path %></li>
           <li><%= link_to 'VIDEOS', posts_path %></li>
           <li><%= link_to 'TOPICS', topics_path %></li>
+          <li role="separator" class="divider"></li>
+
           <li><%= link_to destroy_user_session_path, method: :delete do %>SIGN OUT<% end %></li>
 
         <% else  %>
