@@ -1,50 +1,57 @@
 <div class="container" style="padding:20px;padding-bottom:15px">
   <div class="row">
     <div class="col-md-offset-1 col-md-10 col-sm-12">
-      <div class="panel shadowy">
+      <div class="panel shadowy about">
         <div class="panel-heading">
-          <h1 style="font-family: 'Rancho', cursive;">Voters' Minute</h1>
+          <h1 style="font-family: 'Rancho', cursive;">Voters' <span style="color:#FF534B">Minute</span></h1>
           <hr style="margin-bottom:0px">
         </div>
         <div class="panel-body">
-          <p style="font-size: 1.5em">
-            <h4>Why?</h4>
-            Because opinions matters.
-            <br><br>
-            All too often the important debates and issues are dominated by campaign sound bites, polls, celebrities, tabloid journalism or the echo chamber of social media.  
-            <br><br>
-            Voters' Minute wants to change that by giving everyone a chance to give their opinion on what matters to them.  Who knows, your opinion may change someone else's.
-            <br><br>
-            We don't all agree but that doesn't mean we shouldn't listen, so you don't pick who you listen to next, it's random.
-            <br><br>
-            So this is your chance to <%= link_to "add your voice", new_user_registration_path %> to the debate.
-            <br><br>
-            <h4>How does it work?</h4>
-            It's simple:<br><br>
+        <h3>Why?</h3>
+        <h6>
+          Too many of us have retreated into our own bubbles, whether in our neighborhoods or college campuses or places of worship or our social media feeds, surrounded by people who look like us and share the same political outlook and never challenge our assumptions.  
+          <br><br>
+          And increasingly, we've become so secure in our bubbles that we accept only information, whether true or not, that fits our opinions, instead of basing our opinions on the evidence that’s out there.
+          <br><br>
+          Politics is a battle of ideas; in the course of a healthy debate, we’ll prioritize different goals, and the different means of reaching them.
+          <br><br>
+          Voters' Minute wants to change that by giving everyone a chance to give their opinion on what matters to them.  Who knows, your opinion may change someone else's.
+          <br><br>
+          We don't all agree but that doesn't mean we shouldn't listen, so you don't pick who you listen to next, it's random.
+          <br><br>
+          So this is your chance to <%= link_to "add your voice", new_user_registration_path, style:'color:#FF534B' %> to the debate.
+          <br><br>
+        </h6>
+        <h3>How does it work?</h3>
+        <h6>
+          It's simple:<br><br>
             •  Get your thoughts in order<br>
             •  Record a one minute video<br>
             •  Register on Voters' Minute<br>
             •  Upload your video
             <br><br>
-            <h4>Why only one minute?</h4>
-            Because one minute is plenty of time to make a good argument.
-            <br><br>
-            <h4>Who can upload videos?</h4>
-            Anyone.
-            <br><br>
-            <h4>Who will see my video?</h4>
-            These videos are to help undecided voters and hopefully make some question their position.  Anyone visiting can view the videos and they're selected at random.
-            <br><br>
-            <h4>Can I share videos on Social Media?</h4>
-            Please do if there's social media sharing buttons under the video.
-            <br><br>
-            <h4>Why can't I comment on videos?</h4>
-            Because there's too much hate on the internet already.
-            <br><br>
-          </p>
-          <p>
-            If you have any more questions or want to get in touch, please feel free to <%= mail_to "contact@votersminute.com", "contact", subject: "Contact:" %> with us.
-          </p>
+        </h6>
+        <h3>Why only one minute?</h3>
+        <h6>
+          Because one minute is plenty of time to make a good argument.
+        <br><br>
+        </h6>
+        <h3>Who will see my video?</h3>
+        <h6>
+        These videos are to help undecided voters and hopefully make some question their position.  Anyone visiting can view the videos and they're selected at random.
+        <br><br>
+        <h4>Can I share videos on Social Media?</h4>
+        <h6>
+        Please do if there's social media sharing buttons under the video.
+        <br><br>
+        </h6>
+        </h6>
+        <h3>Why can't I comment on videos?</h3>
+        <h6>
+        Because there's too much hate on the internet already.
+        </h6>
+        <hr>
+        <h5>If you have any more questions or want to get in touch, please feel free to <%= mail_to "contact@votersminute.com", "contact", subject: "Contact:", style:'color:#FF534B' %> with us.</h5>
         </div>
       </div>
     </div>
