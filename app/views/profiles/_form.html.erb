@@ -8,11 +8,11 @@
     <%= f.input :age, :collection => Age.all, :include_blank => true %>
     <%= f.input :nationality, :collection => Nationality.all, :include_blank => true %>
     
-    <%= f.input :avatar, as: :file, :input_html => {:onchange => "previewFile()"} %>
-    <div style="text-align:center">
+    <%# f.input :avatar, as: :file, :input_html => {:onchange => "previewFile()"} %>
+<!--     <div style="text-align:center">
       <img height="100%" width="60%" alt="Image preview...">
     </div>
-    <br>
+ -->    <br>
 
 
     <%# f.input :occupation, :collection => Occupation.all, :include_blank => true %>

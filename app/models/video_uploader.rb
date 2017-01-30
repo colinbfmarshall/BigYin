@@ -2,6 +2,7 @@
 # require "streamio-ffmpeg"
 class VideoUploader < Shrine
   plugin :versions
+  plugin :validation_helpers
 
   def transloadit_process(io, context)
     original = transloadit_file(io)
@@ -17,6 +18,11 @@ class VideoUploader < Shrine
 
     transloadit_assembly(files, context: context, notify_url: notify_url )
   end
+
+  Attacher.validate do
+    validate_max_size 150.megabytes, message: 'is too large (max is 150 MB)'
+  end
+
 
   # plugin :processing
   # process(:store) do |io, context|

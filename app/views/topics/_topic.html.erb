@@ -15,8 +15,10 @@
     <div class="row">
       <div class="col-sm-12">
       <% if owner(topic) || current_admin.present? %>
-        <%= link_to 'Edit', edit_topic_path(topic), class:'btn btn-flat flat-inverse btn-rounded btn-md' %>
+        <%= link_to 'EDIT', edit_topic_path(topic), class:'btn btn-flat flat-inverse btn-rounded btn-md' %>
+        <br><br>
       <% end %>
+      <%= link_to 'ADD NEW VIDEO', new_topic_post_path(topic), class:'btn btn-flat flat-success btn-rounded btn-md' %>
       </div>
     </div>
 

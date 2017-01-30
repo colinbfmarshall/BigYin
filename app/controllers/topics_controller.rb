@@ -1,8 +1,8 @@
 class TopicsController < ApplicationController
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
-  # before_action :authenticate_user!, only: %i[new create update]
+  before_action :authenticate_user!, only: %i[new create update]
   # before_action :authenticate_admin!, only: %i[new create update]
-  before_filter :authenticate_any!, only: %i[new create update]
+  # before_filter :authenticate_any!, only: %i[new create update]
 
   def index
     @topics = Topic.all
