@@ -6,28 +6,30 @@
   </div>
 
   <div class="row">
-    <div class="row">
-      <h5>My Videos</h5> 
-      <hr style="margin-top:5px">
-      <% @profile.user.posts.published.each do |post| %>
-        <%= render partial: "/posts/post", object: post, as: 'post' %>    
-      <% end %>
-    </div>
+    <div class="col-xs-12">
+      <div class="row">
+        <h5>My Videos</h5> 
+        <hr style="margin-top:5px">
+        <% @profile.user.posts.published.each do |post| %>
+          <%= render partial: "/posts/post", object: post, as: 'post' %>    
+        <% end %>
+      </div>
 
-    <div class="row">
-      <h5>Liked Videos</h5>
-      <hr style="margin-top:5px">
-      <% @profile.user.find_liked_items.each do |post| %>
-        <%= render partial: "/posts/post", object: post, as: 'post' %>    
-      <% end %>
-    </div>
+      <div class="row">
+        <h5>Liked Videos</h5>
+        <hr style="margin-top:5px">
+        <% @profile.user.find_liked_items.each do |post| %>
+          <%= render partial: "/posts/post", object: post, as: 'post' %>    
+        <% end %>
+      </div>
 
-    <div class="row">
-      <h5>Disliked Videos</h5>
-      <hr style="margin-top:5px">
-      <% @profile.user.find_disliked_items.each do |post| %>
-        <%= render partial: "/posts/post", object: post, as: 'post' %>    
-      <% end %>
+      <div class="row">
+        <h5>Disliked Videos</h5>
+        <hr style="margin-top:5px">
+        <% @profile.user.find_disliked_items.each do |post| %>
+          <%= render partial: "/posts/post", object: post, as: 'post' %>    
+        <% end %>
+      </div>
     </div>
-  </div>
+  </div>  
 </div>
