@@ -96,10 +96,11 @@ ActiveRecord::Schema.define(version: 20160920092818) do
     t.string   "location"
     t.string   "occupation"
     t.string   "gender"
+    t.boolean  "famous",         default: false
     t.string   "marital_status"
     t.boolean  "share"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree

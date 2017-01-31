@@ -9,6 +9,7 @@ class CreateProfiles < ActiveRecord::Migration
       t.string :location
       t.string :occupation
       t.string :gender
+      t.boolean :famous, default: false
       t.string :marital_status
       t.boolean :share
 
