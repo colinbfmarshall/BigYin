@@ -79,11 +79,11 @@
       <h5><%= link_to 'Current Topics', topics_path %></h5>
       <hr>
       <br>
-      <% Topic.all.each do |topic| %>
-        <%= link_to topic_posts_path(topic) do %>
-          <%= render partial: "/topics/topic_panel", object: topic, as: 'topic' %>   
+        <% Topic.all.each do |topic| %>
+          <%= link_to topic_posts_path(topic) do %>
+            <%= render partial: "/topics/topic_panel", object: topic, as: 'topic' %>   
+          <% end %>
         <% end %>
-      <% end %>
     </div>
   </div>
 </div>
